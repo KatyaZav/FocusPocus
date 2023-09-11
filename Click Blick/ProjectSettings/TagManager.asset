@@ -50,3 +50,9 @@ TagManager:
   - name: object
     uniqueID: 1452326319
     locked: 0
+  - name: effect
+    uniqueID: 2169069707
+    locked: 0
+  - name: ui
+    uniqueID: 3517104801
+    locked: 0

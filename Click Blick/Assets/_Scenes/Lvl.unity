@@ -837,6 +837,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1474431073}
   _anim: {fileID: 1474431077}
+  effect: {fileID: 2822122297460757051, guid: 9b5465a964e430c40bce70a6845d4bea, type: 3}
+  _img: {fileID: 0}
 --- !u!95 &1474431077
 Animator:
   serializedVersion: 5

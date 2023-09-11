@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BallLogic : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class BallLogic : MonoBehaviour
     [SerializeField] Animator _anim;
 
     [SerializeField] GameObject effect;
-    [SerializeField] Image _img;
+    [SerializeField] Sprite  _img;
 
     Camera _cam;
 
@@ -38,7 +37,7 @@ public class BallLogic : MonoBehaviour
         Debug.Log("Tap");
 
         if (effect != null)
-            Instantiate(effect);
+            Instantiate(effect, transform.position, Quaternion.identity);
         _anim.SetTrigger("touched");
         Upped();
     }
