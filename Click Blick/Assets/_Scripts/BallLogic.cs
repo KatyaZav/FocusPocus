@@ -52,9 +52,15 @@ public class BallLogic : MonoBehaviour
     /// </summary>
     void Upped()
     {
-        var mousePosWorld = _cam.ScreenToWorldPoint(Input.mousePosition);
         rb.velocity = new Vector2(0, 0);
+        
+        var mousePosWorld = _cam.ScreenToWorldPoint(Input.mousePosition);
+        var sum = 0f;
+
+        if (Mathf.Abs(transform.position.x - mousePosWorld.x) >= 0.1)
+            sum = (transform.position.x - mousePosWorld.x);
+
         rb.AddForce(new Vector2(
-            (transform.position.x - mousePosWorld.x) * 2, 1-Mathf.Abs(transform.position.x - mousePosWorld.x)) * 300);
+            sum * 2, 1-Mathf.Abs(sum)) * 300);
     }
 }
