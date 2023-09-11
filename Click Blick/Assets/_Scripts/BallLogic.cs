@@ -29,6 +29,11 @@ public class BallLogic : MonoBehaviour
         OnTouched();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _anim.SetTrigger("borders");
+    }
+
     /// <summary>
     /// Action happend on mouse click on ball
     /// </summary>
