@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallLogic : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator _anim;
 
+    [SerializeField] GameObject effect;
+    [SerializeField] Image _img;
+
     Camera _cam;
 
     private void Start()
     {
+        Debug.Log("Загрузка скина и эффектов");
+
         _cam = Camera.main;
 
         if (rb == null)       
@@ -31,8 +37,8 @@ public class BallLogic : MonoBehaviour
     {
         Debug.Log("Tap");
 
-        Debug.LogWarning("Add effects and anim");
-
+        if (effect != null)
+            Instantiate(effect);
         _anim.SetTrigger("touched");
         Upped();
     }
