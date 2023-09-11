@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BallLogic : MonoBehaviour
 {
-
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator _anim;
+
     Camera _cam;
 
     private void Start()
@@ -13,7 +14,9 @@ public class BallLogic : MonoBehaviour
         _cam = Camera.main;
 
         if (rb == null)       
-            rb = GetComponent<Rigidbody2D>();        
+            rb = GetComponent<Rigidbody2D>();
+        if (_anim == null)
+            _anim = GetComponent<Animator>();
     }
     
     private void OnMouseDown()
@@ -30,6 +33,7 @@ public class BallLogic : MonoBehaviour
 
         Debug.LogWarning("Add effects and anim");
 
+        _anim.SetTrigger("touched");
         Upped();
     }
 
