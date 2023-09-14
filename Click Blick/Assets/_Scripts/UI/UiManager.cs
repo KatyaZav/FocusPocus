@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
@@ -45,5 +46,13 @@ public class UiManager : MonoBehaviour
 
 
 
+    }
+
+    /// <summary>
+    /// Change unity scene
+    /// </summary>
+    public void ChangeScene(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }

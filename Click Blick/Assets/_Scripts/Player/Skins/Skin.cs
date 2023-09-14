@@ -15,8 +15,7 @@ public class Skin
     [SerializeField] AudioSource[] Sound;
     //[SerializeField] GameObject BloopMaskEffect;
 
-    [SerializeField] float mass = 1;
-    [SerializeField] float gravity = 0.2f;
+    public float mass = 1, gravity = 0.2f;
 
     /// <summary>
     /// Return true if standart physics settings

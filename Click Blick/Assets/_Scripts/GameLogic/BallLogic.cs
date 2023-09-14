@@ -10,11 +10,13 @@ public class BallLogic : MonoBehaviour
     [SerializeField] GameObject effect;
     [SerializeField] Sprite  _img;
 
+    [SerializeField] PlayerPreferences _playerPref;
     Camera _cam;
 
     private void Start()
     {
         Debug.Log("Загрузка скина и эффектов");
+       _playerPref.UpdateBallSkinInfo();
 
         _cam = Camera.main;
 
