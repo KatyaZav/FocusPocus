@@ -8,7 +8,7 @@ public class AllSkins : MonoBehaviour
     public static AllSkins Instanse;
 
     public Skin[] AllSkinsInfo;
-    public static int currentSkin;
+    public static int currentSkin = 0;
 
     public static Action ChangedSkin; 
 

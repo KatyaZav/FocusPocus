@@ -17,6 +17,8 @@ public class Skin
 
     public float mass = 1, gravity = 0.2f;
 
+    public PhysicsMaterial2D BallMaterial;
+
     /// <summary>
     /// Return true if standart physics settings
     /// </summary>
@@ -30,7 +32,7 @@ public class Skin
     /// <summary>
     /// Return sound effect
     /// </summary>
-    public AudioSource returnSound(){
+    public AudioSource ReturnSound(){
         if (Sound.Length == 0)
             return null;
 
@@ -40,7 +42,7 @@ public class Skin
     /// <summary>
     /// Return particle effect
     /// </summary>
-    public GameObject returnEffect()
+    public GameObject ReturnEffect()
     {
         if (Effect.Length == 0)
             return null;

@@ -5,45 +5,36 @@ using UnityEngine;
 
 public class BallLogic : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] Animator _anim;
-
-    [SerializeField] GameObject effect;
-    [SerializeField] Sprite  _img;
-
-    [SerializeField] PlayerPreferences _playerPref;
-    Camera _cam;
-
-    [SerializeField] LayerMask _borderLayer;
-    [SerializeField] LayerMask _enemyLayer;
+    [SerializeField] PlayerLogic _playerLogic;
+    
+    [SerializeField] LayerMask _borderLayer, _enemyLayer;
 
     public static Action PlayerDead;
 
-    private void Start()
+    private bool _isNotPause = true;
+
+    void Start()
     {
-        Debug.Log("Загрузка скина и эффектов");
-       _playerPref.UpdateBallSkinInfo();
-
-        _cam = Camera.main;
-
-        if (rb == null)       
-            rb = GetComponent<Rigidbody2D>();
-        if (_anim == null)
-            _anim = GetComponent<Animator>();
+       _playerLogic.UpdateBallSkinInfo();
     }
     
-    private void OnMouseDown()
+    void OnMouseDown()
     {
         OnTouched();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   void OnCollisionEnter2D(Collision2D collision)
     {
-        if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _borderLayer.value)
-            _anim.SetTrigger("borders");
+        if (_isNotPause)
+        {
+            if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _borderLayer.value)
+                _playerLogic.SetTrigger("borders");
 
-        if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _enemyLayer.value)
-            PlayerDead?.Invoke();
+            if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _enemyLayer.value)
+            {
+                PlayerDead?.Invoke();
+            }
+        }
     }
 
     /// <summary>
@@ -51,28 +42,36 @@ public class BallLogic : MonoBehaviour
     /// </summary>
     void OnTouched()
     {
-        Debug.Log("Tap");
+        if (_isNotPause)
+        {
+            Debug.Log("Tap");
 
-        if (effect != null)
-            Instantiate(effect, transform.position, Quaternion.identity);
-        _anim.SetTrigger("touched");
-        Upped();
+            _playerLogic.SetTrigger("touched");
+            _playerLogic.MakeEffect();
+            _playerLogic.Kick();
+        }
     }
 
-    /// <summary>
-    /// Ball fly up
-    /// </summary>
-    void Upped()
+    private void ChangePause(bool pause)
     {
-        rb.velocity = new Vector2(0, 0);
-        
-        var mousePosWorld = _cam.ScreenToWorldPoint(Input.mousePosition);
-        var sum = 0f;
+        _isNotPause = pause;
 
-        if (Mathf.Abs(transform.position.x - mousePosWorld.x) >= 0.1)
-            sum = (transform.position.x - mousePosWorld.x);
+        if (pause == false)
+            GetComponent<Rigidbody2D>().Sleep();
+        else
+        {
+            transform.position = new Vector2(0, 0);
+            GetComponent<Rigidbody2D>().WakeUp();
+        }
+    }
 
-        rb.AddForce(new Vector2(
-            sum * 2, 1-Mathf.Abs(sum)) * 300);
+    private void Awake()
+    {
+        RewardVideoLogic.ChangeGamePauseSettingsToResume += ChangePause;
+    }
+
+    private void OnDestroy()
+    {
+        RewardVideoLogic.ChangeGamePauseSettingsToResume -= ChangePause;
     }
 }

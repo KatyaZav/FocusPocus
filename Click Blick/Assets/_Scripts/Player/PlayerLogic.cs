@@ -1,0 +1,75 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerLogic : MonoBehaviour
+{
+    Skin _skin;
+
+    [SerializeField] SpriteRenderer _sprite;
+    [SerializeField] Animator _anim;
+    [SerializeField] Rigidbody2D _rb;
+
+    /// <summary>
+    /// Update all settings of ball
+    /// </summary>
+    public void UpdateBallSkinInfo()
+    {
+        Debug.Log("Current skin " + AllSkins.currentSkin);
+        _skin = AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin];
+
+        _sprite.sprite = _skin.SpriteImage;
+        _rb.sharedMaterial = _skin.BallMaterial;
+
+
+        if (!_skin.CheckStandartPhysics())
+        {
+            _rb.gravityScale = _skin.gravity;
+            _rb.mass = _skin.mass;
+        }
+    }
+
+    /// <summary>
+    /// Kick the ball
+    /// </summary>
+    public void Kick()
+    {
+        _rb.velocity = new Vector2(0, 0);
+
+        var mousePosWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var sum = 0f;
+
+        if (Mathf.Abs(transform.position.x - mousePosWorld.x) >= 0.1)
+            sum = (transform.position.x - mousePosWorld.x);
+
+        _rb.AddForce(new Vector2(
+            sum * 2, 1 - Mathf.Abs(sum)) * 300);
+    }
+
+    /// <summary>
+    /// Make random ball effect
+    /// </summary>
+    public void MakeEffect()
+    {
+        var _ef = _skin.ReturnEffect();
+
+        if (_ef == null) 
+            return;
+        
+        Instantiate(_ef, transform.position, Quaternion.identity);
+    }
+
+    public void MakeSound()
+    {
+        Debug.LogWarning("Have no sounds");
+    }
+
+    /// <summary>
+    /// Set trigger animation with name
+    /// </summary>
+    public void SetTrigger(string name)
+    {
+        _anim.SetTrigger(name);
+    }
+}

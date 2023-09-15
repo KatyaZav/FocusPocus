@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticlesMenu : MonoBehaviour
+public class ParticlesMouse : MonoBehaviour
 {
     [SerializeField] GameObject mouseEffect;
 

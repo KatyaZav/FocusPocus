@@ -2124,6 +2124,7 @@ MonoBehaviour:
     Sound: []
     mass: 1
     gravity: 0.2
+    BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Football
     isBought: 1
     Cost: 0
@@ -2133,6 +2134,7 @@ MonoBehaviour:
     Sound: []
     mass: 1.5
     gravity: 0.2
+    BallMaterial: {fileID: 6200000, guid: f885fd7a9b7fe6f4b849a5b59cd01e96, type: 2}
   - Name: Cactus
     isBought: 0
     Cost: 0
@@ -2142,6 +2144,7 @@ MonoBehaviour:
     Sound: []
     mass: 0.9
     gravity: 0.2
+    BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Tomato
     isBought: 0
     Cost: 0
@@ -2151,6 +2154,7 @@ MonoBehaviour:
     Sound: []
     mass: 0.6
     gravity: 0.2
+    BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Eath
     isBought: 0
     Cost: 0
@@ -2160,6 +2164,7 @@ MonoBehaviour:
     Sound: []
     mass: 2
     gravity: 0.02
+    BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
 --- !u!1 &1545099371
 GameObject:
   m_ObjectHideFlags: 0

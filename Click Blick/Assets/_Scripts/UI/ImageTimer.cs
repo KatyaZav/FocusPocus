@@ -14,11 +14,23 @@ public class ImageTimer : MonoBehaviour
 
     private IEnumerator TimerLogic()
     {
-        var pice = _img.fillAmount / 100;
+        var pice = _img.fillAmount / 80;
         while (_img.fillAmount > 0)
         {
             yield return new WaitForSeconds(0.05f);
             _img.fillAmount -= pice;
         }
+
+        yield return new WaitForSeconds(0.05f);
+        RewardVideoLogic.Instance.EndGame();
+        gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// stop timer if player watch video
+    /// </summary>
+    public void StopTimer()
+    {
+        StopCoroutine(TimerLogic());
     }
 }
