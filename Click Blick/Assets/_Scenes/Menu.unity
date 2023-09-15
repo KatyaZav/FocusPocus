@@ -2131,7 +2131,7 @@ MonoBehaviour:
     Effect:
     - {fileID: 2822122297460757051, guid: 1a59a8fba7d28814f92a62d51b0159db, type: 3}
     Sound: []
-    mass: 1
+    mass: 1.5
     gravity: 0.2
   - Name: Cactus
     isBought: 0
@@ -2140,7 +2140,7 @@ MonoBehaviour:
     Effect:
     - {fileID: 2822122297460757051, guid: b1bac5b1dde6b4d4f86f484734ce5482, type: 3}
     Sound: []
-    mass: 1
+    mass: 0.9
     gravity: 0.2
   - Name: Tomato
     isBought: 0
@@ -2149,7 +2149,7 @@ MonoBehaviour:
     Effect:
     - {fileID: 2822122297460757051, guid: 695a1f6147965944f8a8558b64216b07, type: 3}
     Sound: []
-    mass: 1
+    mass: 0.6
     gravity: 0.2
   - Name: Eath
     isBought: 0
@@ -2158,8 +2158,8 @@ MonoBehaviour:
     Effect:
     - {fileID: 2822122297460757051, guid: 62c5617cecf78c94898a90b9937aa616, type: 3}
     Sound: []
-    mass: 1
-    gravity: 0.2
+    mass: 2
+    gravity: 0.02
 --- !u!1 &1545099371
 GameObject:
   m_ObjectHideFlags: 0
