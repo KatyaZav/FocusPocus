@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,11 @@ public class BallLogic : MonoBehaviour
 
     [SerializeField] PlayerPreferences _playerPref;
     Camera _cam;
+
+    [SerializeField] LayerMask _borderLayer;
+    [SerializeField] LayerMask _enemyLayer;
+
+    public static Action PlayerDead;
 
     private void Start()
     {
@@ -33,7 +39,11 @@ public class BallLogic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _anim.SetTrigger("borders");
+        if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _borderLayer.value)
+            _anim.SetTrigger("borders");
+
+        if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _enemyLayer.value)
+            PlayerDead?.Invoke();
     }
 
     /// <summary>
