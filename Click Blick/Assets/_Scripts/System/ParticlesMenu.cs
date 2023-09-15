@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class ParticlesMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject mouseEffect;
+
+    GameObject _mouseEffect;
+
     void Start()
     {
-        
+       _mouseEffect = Instantiate(mouseEffect, _updatePos(), Quaternion.identity);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _mouseEffect.transform.position = _updatePos();
+    }
+
+    Vector3 _updatePos()
+    {
+        var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition); ;
+        pos.z = 2;
+
+        return pos;
     }
 }
