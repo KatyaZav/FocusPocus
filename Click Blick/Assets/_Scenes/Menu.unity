@@ -2119,7 +2119,8 @@ MonoBehaviour:
     isBought: 1
     Cost: 0
     SpriteImage: {fileID: 21300000, guid: 00850f91e5a435d4ea07e701336f22c3, type: 3}
-    Effect: []
+    Effect:
+    - {fileID: 2822122297460757051, guid: 9b5465a964e430c40bce70a6845d4bea, type: 3}
     Sound: []
     mass: 1
     gravity: 0.2
@@ -2127,31 +2128,35 @@ MonoBehaviour:
     isBought: 1
     Cost: 0
     SpriteImage: {fileID: 21300000, guid: 3a201abc31b9cb44a82902be67cf794f, type: 3}
-    Effect: []
+    Effect:
+    - {fileID: 2822122297460757051, guid: 1a59a8fba7d28814f92a62d51b0159db, type: 3}
     Sound: []
     mass: 1
     gravity: 0.2
   - Name: Cactus
     isBought: 0
-    Cost: 100
+    Cost: 0
     SpriteImage: {fileID: 21300000, guid: 9ba9f132125bb174f9850b41d62474d9, type: 3}
-    Effect: []
+    Effect:
+    - {fileID: 2822122297460757051, guid: b1bac5b1dde6b4d4f86f484734ce5482, type: 3}
     Sound: []
     mass: 1
     gravity: 0.2
   - Name: Tomato
     isBought: 0
-    Cost: 100
+    Cost: 0
     SpriteImage: {fileID: 21300000, guid: b46a5d5dec9387f468d6791b93c2042a, type: 3}
-    Effect: []
+    Effect:
+    - {fileID: 2822122297460757051, guid: 695a1f6147965944f8a8558b64216b07, type: 3}
     Sound: []
     mass: 1
     gravity: 0.2
   - Name: Eath
     isBought: 0
-    Cost: 100
+    Cost: 0
     SpriteImage: {fileID: 21300000, guid: c326fa5e9c715bc4cbc25ce349e5a8d7, type: 3}
-    Effect: []
+    Effect:
+    - {fileID: 2822122297460757051, guid: 62c5617cecf78c94898a90b9937aa616, type: 3}
     Sound: []
     mass: 1
     gravity: 0.2
