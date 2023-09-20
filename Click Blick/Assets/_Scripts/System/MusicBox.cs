@@ -22,7 +22,7 @@ public class MusicBox : MonoBehaviour
         if (Instance == null)
             Instance = this;
 
-        Debug.Log("Прогрузка звука из SDK");
+        UpdateVolumeSettings(PlayerSetting.IsMusicMute, PlayerSetting.IsSoundMute);
     }
 
     /// <summary>
