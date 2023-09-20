@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class BallLogic : MonoBehaviour
 {
+    [SerializeField] SoundsMassive[] _sounds;
     [SerializeField] PlayerLogic _playerLogic;
     
-    [SerializeField] LayerMask _borderLayer, _enemyLayer;
+    [SerializeField] LayerMask _borderLayer, _enemyLayer, _itemsLayer;
 
     public static Action PlayerDead;
 
@@ -27,14 +28,39 @@ public class BallLogic : MonoBehaviour
     {
         if (_isNotPause)
         {
-            if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _borderLayer.value)
+            if (checkEqualMask(_borderLayer.value, collision))
+            {
                 _playerLogic.SetTrigger("borders");
+                playSound(2);
+            }
 
-            if (LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == _enemyLayer.value)
+            if (checkEqualMask(_enemyLayer.value, collision))
             {
                 PlayerDead?.Invoke();
             }
+
+            if (checkEqualMask(_itemsLayer.value, collision))
+            {
+                playSound(1);
+            }
         }
+    }
+
+    /// <summary>
+    /// Checked if toched gameObject have same mask with layer
+    /// </summary>
+    bool checkEqualMask(LayerMask layer, Collision2D collision)
+    {
+        return LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == layer.value;
+    }
+
+    /// <summary>
+    /// play random sound of massive 
+    /// </summary>
+    void playSound(int index)
+    {
+        MusicBox.Instance.PlaySound(
+                 _sounds[index].clips[UnityEngine.Random.Range(0, _sounds[index].clips.Length)]);
     }
 
     /// <summary>
@@ -49,6 +75,8 @@ public class BallLogic : MonoBehaviour
             _playerLogic.SetTrigger("touched");
             _playerLogic.MakeEffect();
             _playerLogic.Kick();
+
+            playSound(0);
         }
     }
 
@@ -74,4 +102,11 @@ public class BallLogic : MonoBehaviour
     {
         RewardVideoLogic.ChangeGamePauseSettingsToResume -= ChangePause;
     }
+}
+
+[System.Serializable]
+public class SoundsMassive
+{
+    public string name;
+    public AudioClip[] clips;
 }
