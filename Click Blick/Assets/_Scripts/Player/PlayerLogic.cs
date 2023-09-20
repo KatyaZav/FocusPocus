@@ -10,6 +10,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] SpriteRenderer _sprite;
     [SerializeField] Animator _anim;
     [SerializeField] Rigidbody2D _rb;
+    [SerializeField] GameObject _smashEffect;
 
     /// <summary>
     /// Update all settings of ball
@@ -28,6 +29,8 @@ public class PlayerLogic : MonoBehaviour
             _rb.gravityScale = _skin.gravity;
             _rb.mass = _skin.mass;
         }
+
+        _smashEffect = _skin.SmashMaskSprite;
     }
 
     /// <summary>
@@ -71,5 +74,33 @@ public class PlayerLogic : MonoBehaviour
     public void SetTrigger(string name)
     {
         _anim.SetTrigger(name);
+    }
+
+    /// <summary>
+    /// Make sprite mask effect on walls ond borders
+    /// </summary>
+    public void SmashBall()
+    {
+        if (_smashEffect)
+        {
+            Debug.Log("Smash");
+            
+            var obj = Instantiate(_smashEffect, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            StartCoroutine(Destroy(obj));
+
+            IEnumerator Destroy(GameObject obj)
+            {
+                var img = obj.GetComponent<SpriteRenderer>();
+                yield return new WaitForSeconds(2);
+
+                while(img.color.a > 0)
+                {
+                    img.color = new Color(img.color.b, img.color.g, img.color.b, img.color.a-0.1f);
+                    yield return new WaitForSeconds(1);
+                }
+
+                Destroy(obj);
+            }
+        }
     }
 }

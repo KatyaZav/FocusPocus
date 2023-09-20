@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 817827300277756795}
   - component: {fileID: 817827300277756792}
   - component: {fileID: 817827300277756793}
+  - component: {fileID: 7469223264156792696}
+  - component: {fileID: 1346883208772863733}
   m_Layer: 8
   m_Name: diamond
   m_TagString: Untagged
@@ -178,3 +180,33 @@ PolygonCollider2D:
       - {x: 0.16, y: -1.8349999}
       - {x: 0.22999999, y: -1.795}
       - {x: 0.31, y: -1.7049999}
+--- !u!114 &7469223264156792696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817827300277756796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb78c7bbc4111b44b3fb140668cc2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _move: {fileID: 817827300277756792}
+  _tagUI: Diamonds
+  _effect: {fileID: 5315836823668790815, guid: 1a3f51ca7ec882f41a195e984c90b5c4, type: 3}
+--- !u!114 &1346883208772863733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817827300277756796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb78c7bbc4111b44b3fb140668cc2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _move: {fileID: 817827300277756792}
+  _tagUI: Diamonds
+  _effect: {fileID: 5315836823668790815, guid: 1a3f51ca7ec882f41a195e984c90b5c4, type: 3}

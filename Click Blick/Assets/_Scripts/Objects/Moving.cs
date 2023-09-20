@@ -17,7 +17,7 @@ public class Moving : MonoBehaviour
     }
     
 
-    private IEnumerator moveChous()
+    public IEnumerator moveChous()
     {
         while (true)
         {
@@ -25,12 +25,17 @@ public class Moving : MonoBehaviour
             float y = Random.Range(left.transform.position.y, right.transform.position.y);
             Vector2 B = new Vector2(x, y);
 
-            while (distance(transform, B) > 1)
-            {
-                transform.position = Vector2
-                    .Lerp(transform.position, B, speed / (distance(transform, B) * 300));
-                yield return new WaitForFixedUpdate();
-            }
+            yield return StartCoroutine(Move(B));            
+        }
+    }
+
+    public IEnumerator Move(Vector2 B)
+    {
+        while (distance(transform, B) > 1)
+        {
+            transform.position = Vector2
+                .Lerp(transform.position, B, speed / (distance(transform, B) * 300));
+            yield return new WaitForFixedUpdate();
         }
     }
 

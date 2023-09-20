@@ -31,6 +31,7 @@ public class BallLogic : MonoBehaviour
             if (checkEqualMask(_borderLayer.value, collision))
             {
                 _playerLogic.SetTrigger("borders");
+                _playerLogic.SmashBall();
                 playSound(2);
             }
 
@@ -41,6 +42,11 @@ public class BallLogic : MonoBehaviour
 
             if (checkEqualMask(_itemsLayer.value, collision))
             {
+                ICollecteble obj = collision.gameObject.GetComponent<ICollecteble>();
+                obj.Collect();
+
+                Debug.Log("Collected");
+
                 playSound(1);
             }
         }
@@ -70,8 +76,6 @@ public class BallLogic : MonoBehaviour
     {
         if (_isNotPause)
         {
-            Debug.Log("Tap");
-
             _playerLogic.SetTrigger("touched");
             _playerLogic.MakeEffect();
             _playerLogic.Kick();

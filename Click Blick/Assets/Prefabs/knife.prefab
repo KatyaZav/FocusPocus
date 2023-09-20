@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2940937998657597579}
   - component: {fileID: 2940937998657597580}
   - component: {fileID: 2940937998657597581}
-  - component: {fileID: 2940937998657597582}
   - component: {fileID: 2940937998657597583}
   m_Layer: 7
   m_Name: knife
@@ -169,20 +168,6 @@ PolygonCollider2D:
       - {x: 0.072000004, y: -1.6420001}
       - {x: 0.120000005, y: -1.6060001}
       - {x: 0.16800001, y: -1.554}
---- !u!114 &2940937998657597582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2940937998657597680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b2cd8f566ab5d7428786a57c6d6bdac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _anim: {fileID: 2940937998657597583}
-  _waitTime: 10
 --- !u!95 &2940937998657597583
 Animator:
   serializedVersion: 5

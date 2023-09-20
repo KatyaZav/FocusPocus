@@ -10,6 +10,7 @@ public class Skin
 
     public int Cost;
     public Sprite SpriteImage;
+    public GameObject SmashMaskSprite;
     
     [SerializeField] GameObject[] Effect;
     [SerializeField] AudioSource[] Sound;
