@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1996427737661749563}
   m_Layer: 8
   m_Name: record
-  m_TagString: Untagged
+  m_TagString: point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,9 +181,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _move: {fileID: 3484096051810844056}
-  _tagUI: Records
+  _tagUI: Points
   _effect: {fileID: 5315836823668790815, guid: 1a3f51ca7ec882f41a195e984c90b5c4, type: 3}
   _anim: {fileID: 1996427737661749563}
+  isCollected: 0
+  value: 1
 --- !u!95 &1996427737661749563
 Animator:
   serializedVersion: 5

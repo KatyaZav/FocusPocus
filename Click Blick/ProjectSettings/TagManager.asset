@@ -8,6 +8,9 @@ TagManager:
   - Right
   - Diamonds
   - Records
+  - diamond
+  - point
+  - Points
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,14 @@ public class Object : MonoBehaviour, ICollecteble
     [SerializeField] GameObject _effect;
     [SerializeField] Animator _anim;
 
-    bool isCollected = false;
+    public bool isCollected = false;
+    public Value value;
+    public static Action<Value> CollectedObj;
 
     public void Collect()
     {
         if (!isCollected)
         {
-            isCollected = true;
             Debug.Log("Collected");
             Moving();
         }
@@ -29,7 +31,15 @@ public class Object : MonoBehaviour, ICollecteble
         if (UI == null)
             throw new System.Exception("Wrong tag added");
 
+        isCollected = true;
         Instantiate(_effect, transform);
         _move.StopMoveChaous(UI.gameObject.transform.position);
+
+        Invoke("Act", 1.5f);
+    }
+
+    void Act()
+    {
+        CollectedObj?.Invoke(value);
     }
 }

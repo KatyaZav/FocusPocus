@@ -12,27 +12,23 @@ public class UpdateValue : MonoBehaviour
     private void Awake()
     {
         _text = GetComponentInChildren<Text>();
-        Debug.Log(_valueUI.ToString());
     }
 
     private void OnEnable()
     {
-        if (_valueUI == Value.diamond)
-            _text.text = PlayerSetting.Diamonds.ToString();
-
-        if (_valueUI == Value.points)
-            _text.text = PlayerSetting.CurrentRecord.ToString();
-
-        if (_valueUI == Value.record)
-            _text.text = PlayerSetting.Record.ToString();
+        UpdateValueUI();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void UpdateValueUI()
     {
-        if (collision.gameObject.tag == _valueUI.ToString())
-        {
-            Destroy(collision.gameObject);
-        }
+        if (_valueUI == Value.diamond)
+            _text.text = Saves.Diamonds.ToString();
+
+        if (_valueUI == Value.point)
+            _text.text = Saves.Points.ToString();
+
+        if (_valueUI == Value.record)
+            _text.text = Saves.Record.ToString();
     }
 }
 
@@ -40,6 +36,6 @@ public class UpdateValue : MonoBehaviour
 public enum Value
 {
     diamond,
-    points,
+    point,
     record
 };

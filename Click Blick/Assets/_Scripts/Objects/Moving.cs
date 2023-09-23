@@ -19,7 +19,7 @@ public class Moving : MonoBehaviour
     public void StopMoveChaous(Vector2 B)
     {
         StopAllCoroutines();
-        StartCoroutine(Move(B, speed*3));
+        StartCoroutine(Move(B, speed*3, true));
     }
 
     IEnumerator moveChous()
@@ -34,7 +34,7 @@ public class Moving : MonoBehaviour
         }
     }
 
-    IEnumerator Move(Vector2 B, float speed)
+    IEnumerator Move(Vector2 B, float speed, bool DestroyAfer = false)
     {
         while (distance(transform, B) > 1)
         {
@@ -42,6 +42,9 @@ public class Moving : MonoBehaviour
                 .Lerp(transform.position, B, speed / (distance(transform, B) * 300));
             yield return new WaitForFixedUpdate();
         }
+
+        if (DestroyAfer)
+            Destroy(gameObject);
     }
 
     private float distance(Transform A, Vector2 B)
