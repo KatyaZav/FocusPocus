@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 817827300277756792}
   - component: {fileID: 817827300277756793}
   - component: {fileID: 7469223264156792696}
-  - component: {fileID: 1346883208772863733}
+  - component: {fileID: 828749077865875794}
   m_Layer: 8
   m_Name: diamond
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1452326319
   m_SortingLayer: 3
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af8b0f1826d52b04fba1ec275f82a8f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -195,18 +195,25 @@ MonoBehaviour:
   _move: {fileID: 817827300277756792}
   _tagUI: Diamonds
   _effect: {fileID: 5315836823668790815, guid: 1a3f51ca7ec882f41a195e984c90b5c4, type: 3}
---- !u!114 &1346883208772863733
-MonoBehaviour:
+  _anim: {fileID: 828749077865875794}
+--- !u!95 &828749077865875794
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817827300277756796}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb78c7bbc4111b44b3fb140668cc2ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _move: {fileID: 817827300277756792}
-  _tagUI: Diamonds
-  _effect: {fileID: 5315836823668790815, guid: 1a3f51ca7ec882f41a195e984c90b5c4, type: 3}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a7d021761669d3409efca99585ff3ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

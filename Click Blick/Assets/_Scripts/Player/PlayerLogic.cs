@@ -19,6 +19,7 @@ public class PlayerLogic : MonoBehaviour
     {
         Debug.Log("Current skin " + AllSkins.currentSkin);
         _skin = AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin];
+        
 
         _sprite.sprite = _skin.SpriteImage;
         _rb.sharedMaterial = _skin.BallMaterial;

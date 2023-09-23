@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class UpdateValue : MonoBehaviour
     private void Awake()
     {
         _text = GetComponentInChildren<Text>();
+        Debug.Log(_valueUI.ToString());
     }
 
     private void OnEnable()
@@ -18,7 +20,7 @@ public class UpdateValue : MonoBehaviour
         if (_valueUI == Value.diamond)
             _text.text = PlayerSetting.Diamonds.ToString();
 
-        if (_valueUI == Value.currentRecord)
+        if (_valueUI == Value.points)
             _text.text = PlayerSetting.CurrentRecord.ToString();
 
         if (_valueUI == Value.record)
@@ -27,7 +29,10 @@ public class UpdateValue : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == _valueUI.ToString())
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
 
@@ -35,6 +40,6 @@ public class UpdateValue : MonoBehaviour
 public enum Value
 {
     diamond,
-    currentRecord,
+    points,
     record
 };

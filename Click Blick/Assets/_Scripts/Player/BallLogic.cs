@@ -38,17 +38,18 @@ public class BallLogic : MonoBehaviour
             if (checkEqualMask(_enemyLayer.value, collision))
             {
                 PlayerDead?.Invoke();
-            }
+            }            
+        }
+    }
 
-            if (checkEqualMask(_itemsLayer.value, collision))
-            {
-                ICollecteble obj = collision.gameObject.GetComponent<ICollecteble>();
-                obj.Collect();
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (checkEqualMask(_itemsLayer.value, collision))
+        {
+            ICollecteble obj = collision.gameObject.GetComponent<ICollecteble>();
+            obj.Collect();
 
-                Debug.Log("Collected");
-
-                playSound(1);
-            }
+            playSound(1);
         }
     }
 
@@ -56,6 +57,11 @@ public class BallLogic : MonoBehaviour
     /// Checked if toched gameObject have same mask with layer
     /// </summary>
     bool checkEqualMask(LayerMask layer, Collision2D collision)
+    {
+        return LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == layer.value;
+    }
+
+    bool checkEqualMask(LayerMask layer, Collider2D collision)
     {
         return LayerMask.GetMask(LayerMask.LayerToName(collision.gameObject.layer)) == layer.value;
     }

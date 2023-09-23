@@ -16,8 +16,13 @@ public class Moving : MonoBehaviour
         StartCoroutine(moveChous());
     }
     
+    public void StopMoveChaous(Vector2 B)
+    {
+        StopAllCoroutines();
+        StartCoroutine(Move(B, speed*3));
+    }
 
-    public IEnumerator moveChous()
+    IEnumerator moveChous()
     {
         while (true)
         {
@@ -25,11 +30,11 @@ public class Moving : MonoBehaviour
             float y = Random.Range(left.transform.position.y, right.transform.position.y);
             Vector2 B = new Vector2(x, y);
 
-            yield return StartCoroutine(Move(B));            
+            yield return StartCoroutine(Move(B, speed));            
         }
     }
 
-    public IEnumerator Move(Vector2 B)
+    IEnumerator Move(Vector2 B, float speed)
     {
         while (distance(transform, B) > 1)
         {

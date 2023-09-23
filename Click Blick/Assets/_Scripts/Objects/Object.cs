@@ -7,30 +7,29 @@ public class Object : MonoBehaviour, ICollecteble
     [SerializeField] Moving _move;
     [SerializeField] string _tagUI;
     [SerializeField] GameObject _effect;
+    [SerializeField] Animator _anim;
+
+    bool isCollected = false;
 
     public void Collect()
     {
-        _move.StartCoroutine("moveChous");
-        StartCoroutine("Moving");
+        if (!isCollected)
+        {
+            isCollected = true;
+            Debug.Log("Collected");
+            Moving();
+        }
     }
-
-    IEnumerable Moving()
+    private void Moving()
     {
+        _anim.SetTrigger("collected");
+
         var UI = GameObject.FindGameObjectWithTag(_tagUI);
 
         if (UI == null)
             throw new System.Exception("Wrong tag added");
 
-        var i = 0;
-        while (i < 10)
-        {
-            transform.position = Vector2
-                   .Lerp(transform.position, Vector2.down, 4);
-            i++;
-            yield return new WaitForFixedUpdate();
-        }
-
         Instantiate(_effect, transform);
-        _move.StartCoroutine("Move");
+        _move.StopMoveChaous(UI.gameObject.transform.position);
     }
 }
