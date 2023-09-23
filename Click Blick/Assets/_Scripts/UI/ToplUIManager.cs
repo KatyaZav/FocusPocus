@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LvlUIManager : MonoBehaviour
+public class TopUIManager : MonoBehaviour
 {
     public GameObject diamond;
     public GameObject point;
@@ -10,6 +10,7 @@ public class LvlUIManager : MonoBehaviour
 
     [Header("______")]
     public GameObject effect;
+    public bool NeedActive = false;
 
     private void Awake()
     {
@@ -26,33 +27,36 @@ public class LvlUIManager : MonoBehaviour
         if (val == Value.diamond)
         {
             Saves.AddDiamonds();
-            Activate(diamond);
+            Activate(diamond, NeedActive);
         }
 
         if (val == Value.point)
         {
             Saves.AddPoint();
-            Activate(point);
+            Activate(point, NeedActive);
         }
 
         if (val == Value.record)
         {
-            Activate(record);
+            Activate(record, NeedActive);
         }
     }
 
-    void Activate(GameObject obj)
+    void Activate(GameObject obj, bool needActive)
     {
         obj.SetActive(true);
         Instantiate(effect, obj.transform);
 
         StartCoroutine(Disactivate(obj));
+
+        if (needActive)
+            obj.SetActive(true);
     }
 
 
     IEnumerator Disactivate(GameObject obj)    
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         obj.SetActive(false);
     }
 }

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 108233168}
   - component: {fileID: 108233170}
   - component: {fileID: 108233169}
+  - component: {fileID: 108233171}
   m_Layer: 5
   m_Name: top ui
   m_TagString: Untagged
@@ -201,6 +202,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108233167}
   m_CullTransparentMesh: 1
+--- !u!114 &108233171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108233167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4d40e3dea1ad7469593037c3ef6cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamond: {fileID: 314326550}
+  point: {fileID: 0}
+  record: {fileID: 1915647638}
+  effect: {fileID: 0}
+  NeedActive: 1
 --- !u!1 &199850718
 GameObject:
   m_ObjectHideFlags: 0
