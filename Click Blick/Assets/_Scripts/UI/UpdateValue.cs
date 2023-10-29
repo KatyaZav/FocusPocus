@@ -22,13 +22,13 @@ public class UpdateValue : MonoBehaviour
     public void UpdateValueUI()
     {
         if (_valueUI == Value.diamond)
-            _text.text = Saves.Diamonds.ToString();
+            _text.text = PlayerPrefs.GetInt(Saves.Diamond, 0).ToString();//Saves.Diamonds.ToString();
 
         if (_valueUI == Value.point)
-            _text.text = Saves.Points.ToString();
+            _text.text = PlayerPrefs.GetInt(Saves.Point, 0).ToString();//Saves.Points.ToString();
 
         if (_valueUI == Value.record)
-            _text.text = Saves.Record.ToString();
+            _text.text = PlayerPrefs.GetInt(Saves.Records, 0).ToString();//Saves.Record.ToString();
     }
 }
 
