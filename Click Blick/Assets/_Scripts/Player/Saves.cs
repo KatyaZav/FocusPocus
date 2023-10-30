@@ -2,8 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Saves
+public class Saves : MonoBehaviour
 {
+    void Awake()
+    {
+        Diamonds = PlayerPrefs.GetInt(Diamond, 0);
+        Record = PlayerPrefs.GetInt(Records, 0);
+        Points = 0;
+    }
+
     public static int Diamonds { get; private set;}
     public static int Points { get; private set; }
     public static int Record { get; private set; }
@@ -43,5 +50,21 @@ public static class Saves
     {
         Points += count;
         PlayerPrefs.SetInt(Point, Points);
+    }
+
+    public static void ResetPoints()
+    {
+        Points = 0;
+        PlayerPrefs.SetInt(Point, Points);
+    }
+
+    public static void SavePr()
+    {
+        if (Record < Points)
+        {
+            Record = Points;
+            PlayerPrefs.SetInt(Records, Record);
+        }
+        else Points = 0;
     }
 }

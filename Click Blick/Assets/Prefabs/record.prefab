@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _move: {fileID: 3484096051810844056}
   _tagUI: Points
-  _effect: {fileID: 5315836823668790815, guid: 1a3f51ca7ec882f41a195e984c90b5c4, type: 3}
+  _effect: {fileID: 2822122297460757051, guid: 9b5465a964e430c40bce70a6845d4bea, type: 3}
   _anim: {fileID: 1996427737661749563}
   isCollected: 0
   value: 1

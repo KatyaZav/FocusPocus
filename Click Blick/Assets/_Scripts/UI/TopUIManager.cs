@@ -24,6 +24,7 @@ public class TopUIManager : MonoBehaviour
 
     void UpdateUI(Value val)
     {
+
         if (val == Value.diamond)
         {
             Saves.AddDiamonds();
@@ -44,9 +45,14 @@ public class TopUIManager : MonoBehaviour
 
     void Activate(GameObject obj, bool needActive)
     {
-        obj.SetActive(true);
-        Instantiate(effect, obj.transform);
+        Debug.Log(obj);
 
+        obj.SetActive(true);
+
+        if (effect != null)
+            Instantiate(effect, obj.transform);
+
+        StopAllCoroutines();
         StartCoroutine(Disactivate(obj));
 
         if (needActive)
@@ -56,7 +62,7 @@ public class TopUIManager : MonoBehaviour
 
     IEnumerator Disactivate(GameObject obj)    
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         obj.SetActive(false);
     }
 }

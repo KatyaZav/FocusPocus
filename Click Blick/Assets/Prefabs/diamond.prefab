@@ -194,8 +194,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _move: {fileID: 817827300277756792}
   _tagUI: Diamonds
-  _effect: {fileID: 5315836823668790815, guid: 1a3f51ca7ec882f41a195e984c90b5c4, type: 3}
+  _effect: {fileID: 2822122297460757051, guid: 588b2b406113a37489203e50980b7362, type: 3}
   _anim: {fileID: 828749077865875794}
+  isCollected: 0
+  value: 0
 --- !u!95 &828749077865875794
 Animator:
   serializedVersion: 5

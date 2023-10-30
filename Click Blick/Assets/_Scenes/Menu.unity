@@ -214,6 +214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4d40e3dea1ad7469593037c3ef6cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diamond: {fileID: 314326550}
+  point: {fileID: 1915647638}
+  record: {fileID: 0}
+  effect: {fileID: 0}
+  NeedActive: 0
 --- !u!1 &199850718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,6 +3278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802219550}
+  - component: {fileID: 1802219552}
   - component: {fileID: 1802219549}
   - component: {fileID: 1802219548}
   - component: {fileID: 1802219547}
@@ -3384,6 +3390,18 @@ MonoBehaviour:
   _cost: {fileID: 1885382877}
   _buttonStart: {fileID: 199850720}
   _buttonBuy: {fileID: 879146173}
+--- !u!114 &1802219552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802219546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17cc43cf1b5a9e4cbe0a59c570169f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1803930237
 GameObject:
   m_ObjectHideFlags: 0

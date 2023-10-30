@@ -26,20 +26,22 @@ public class Object : MonoBehaviour, ICollecteble
     {
         _anim.SetTrigger("collected");
 
-        var UI = GameObject.FindGameObjectWithTag(_tagUI);
+        /*var UI = GameObject.FindGameObjectWithTag(_tagUI);
 
         if (UI == null)
             throw new System.Exception("Wrong tag added");
 
         isCollected = true;
-        Instantiate(_effect, transform);
-        _move.StopMoveChaous(UI.gameObject.transform.position);
+        Instantiate(_effect, transform.position, Quaternion.identity);
+        _move.StopMoveChaous(UI.gameObject.transform.position);*/
 
-        Invoke("Act", 1.5f);
+
+        CollectedObj?.Invoke(value);
+        Destroy(gameObject);
+        //Invoke("Act", 1.5f);
     }
 
     void Act()
     {
-        CollectedObj?.Invoke(value);
     }
 }

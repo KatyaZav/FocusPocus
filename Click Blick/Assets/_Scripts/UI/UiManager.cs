@@ -59,6 +59,14 @@ public class UiManager : MonoBehaviour
         YG.YandexGame.SaveProgress();
         SceneManager.LoadScene(name);
     }
+    
+    public void StartGame(string name)
+    {
+        Saves.ResetPoints();
+
+        YG.YandexGame.SaveProgress();
+        SceneManager.LoadScene(name);
+    }
 
     public void MuteSound(bool isMute)
     {
