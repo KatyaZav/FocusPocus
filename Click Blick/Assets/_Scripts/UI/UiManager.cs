@@ -10,11 +10,16 @@ public class UiManager : MonoBehaviour
     void Awake()
     {
         AllSkins.ChangedSkin += UpdateSkin;
+        YG.YandexGame.RewardVideoEvent += Try;
+
+        AllSkins.currentSkin = PlayerPrefs.GetInt("currentSkin", 0);
+        UpdateSkin();
     }
 
     private void OnDestroy()
     {
         AllSkins.ChangedSkin -= UpdateSkin;
+        YG.YandexGame.RewardVideoEvent -= Try;
     }
 
     [SerializeField] Image _playerImage;
@@ -22,6 +27,7 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] Button _buttonStart;
     [SerializeField] Button _buttonBuy;
+    [SerializeField] Button _buttonTry;
 
     /// <summary>
     /// Update skin ui
@@ -30,25 +36,29 @@ public class UiManager : MonoBehaviour
     {
         var _skin = AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin];
 
+        _skin.isBought = PlayerPrefs.GetInt("skin" + AllSkins.currentSkin.ToString(), 0) == 1;
+           
         _playerImage.sprite = _skin.SpriteImage;
 
         if (_skin.Cost == 0 || _skin.isBought)
         {
             _cost.text = "";
 
-            _buttonBuy.gameObject.SetActive(false);
             _buttonStart.gameObject.SetActive(true);                
+            _buttonBuy.gameObject.SetActive(false);
+            _buttonTry.gameObject.SetActive(false);
         }
         else
         {
             _cost.text = _skin.Cost.ToString();
 
-            _buttonBuy.gameObject.SetActive(true);
             _buttonStart.gameObject.SetActive(false);
+
+            bool u = (_skin.Cost <= PlayerPrefs.GetInt(Saves.Diamond));
+
+            _buttonBuy.gameObject.SetActive(u);
+            _buttonTry.gameObject.SetActive(!u);
         } 
-
-
-
     }
 
     /// <summary>
@@ -62,6 +72,7 @@ public class UiManager : MonoBehaviour
     
     public void StartGame(string name)
     {
+        PlayerPrefs.SetInt("currentSkin", AllSkins.currentSkin); 
         Saves.ResetPoints();
 
         YG.YandexGame.SaveProgress();
@@ -76,5 +87,29 @@ public class UiManager : MonoBehaviour
     public void MuteMusic(bool isMute)
     {
         PlayerSetting.UpdateMusicMute(isMute);
+    }
+
+    public void Buy()
+    {
+        if (!Saves.Buy(AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Cost))
+            Debug.LogWarning("didn't bought");
+
+        PlayerPrefs.SetInt("skin" + AllSkins.currentSkin.ToString(), 1);
+        _cost.text = "";
+
+        _buttonStart.gameObject.SetActive(true);
+        _buttonBuy.gameObject.SetActive(false);
+        _buttonTry.gameObject.SetActive(false);
+    }
+
+    public void Try(int u)
+    {
+        if (u == 1)
+            StartGame("Lvl");
+    }
+
+    public void DeleteProgress()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
