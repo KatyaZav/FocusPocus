@@ -9,9 +9,17 @@ public class UpdateValue : MonoBehaviour
     [SerializeField] Value _valueUI;
     Text _text;
 
+
     private void Awake()
     {
         _text = GetComponentInChildren<Text>();
+        UiManager.Bought += UpdateValueUI;
+        
+    }
+
+    private void OnDisable()
+    {
+        UiManager.Bought -= UpdateValueUI;
     }
 
     private void OnEnable()

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class UiManager : MonoBehaviour
 {
@@ -89,10 +90,13 @@ public class UiManager : MonoBehaviour
         PlayerSetting.UpdateMusicMute(isMute);
     }
 
+    public static Action Bought;
     public void Buy()
     {
         if (!Saves.Buy(AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Cost))
             Debug.LogWarning("didn't bought");
+
+        Bought?.Invoke();
 
         PlayerPrefs.SetInt("skin" + AllSkins.currentSkin.ToString(), 1);
         _cost.text = "";
