@@ -31,6 +31,7 @@ public class AllSkins : MonoBehaviour
             else currentSkin += 1;
         }
 
+        PlayerPrefs.SetInt("currentSkin", currentSkin);
         Debug.Log("Skin changed to " + Instanse.AllSkinsInfo[currentSkin].Name);
         ChangedSkin?.Invoke();
     }

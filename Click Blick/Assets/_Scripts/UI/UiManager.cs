@@ -14,7 +14,7 @@ public class UiManager : MonoBehaviour
         YG.YandexGame.RewardVideoEvent += Try;
 
         AllSkins.currentSkin = PlayerPrefs.GetInt("currentSkin", 0);
-        UpdateSkin();
+        UpdateSkin();        
     }
 
     private void OnDestroy()
@@ -29,6 +29,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] Button _buttonStart;
     [SerializeField] Button _buttonBuy;
     [SerializeField] Button _buttonTry;
+    
 
     /// <summary>
     /// Update skin ui
