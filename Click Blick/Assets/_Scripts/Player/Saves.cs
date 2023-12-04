@@ -64,6 +64,7 @@ public class Saves : MonoBehaviour
         {
             Record = Points;
             PlayerPrefs.SetInt(Records, Record);
+            YG.YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
         }
         else Points = 0;
     }

@@ -14,7 +14,7 @@ public class ImageTimer : MonoBehaviour
 
     private IEnumerator TimerLogic()
     {
-        var pice = _img.fillAmount / 80;
+        var pice = _img.fillAmount / 50;
         while (_img.fillAmount > 0)
         {
             yield return new WaitForSeconds(0.05f);
