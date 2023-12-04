@@ -10,5 +10,6 @@ public class SaveProgress : MonoBehaviour
     {
         text.text = PlayerPrefs.GetInt(Saves.Point).ToString();
         Saves.SavePr();
+        LoadAndSaveProgress.SaveProgress();
     }
 }

@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
+
 namespace YG
 {
     [System.Serializable]
@@ -18,7 +19,11 @@ namespace YG
 
         // Ваши сохранения
 
-        // ...
+        public int Diamond = 0;
+        public int Record = 0;
+        public int currentSkin = 0;
+
+        public Dictionary<string, int> skins = new Dictionary<string, int>(); 
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 

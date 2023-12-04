@@ -3098,6 +3098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487264404}
   - component: {fileID: 1487264405}
+  - component: {fileID: 1487264406}
   m_Layer: 0
   m_Name: AllSkins
   m_TagString: Untagged
@@ -3188,6 +3189,18 @@ MonoBehaviour:
     mass: 2
     gravity: 0.02
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
+--- !u!114 &1487264406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487264403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b612b0f04dd5542af93de7cfef5f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1545099371
 GameObject:
   m_ObjectHideFlags: 0

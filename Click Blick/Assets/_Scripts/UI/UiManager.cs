@@ -8,7 +8,7 @@ using System;
 
 public class UiManager : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
         AllSkins.ChangedSkin += UpdateSkin;
         YG.YandexGame.RewardVideoEvent += Try;
