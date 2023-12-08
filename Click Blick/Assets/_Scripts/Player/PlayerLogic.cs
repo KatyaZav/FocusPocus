@@ -80,21 +80,21 @@ public class PlayerLogic : MonoBehaviour
     /// <summary>
     /// Make sprite mask effect on walls ond borders
     /// </summary>
-    public void SmashBall()
+    public void SmashBall(Transform tr)
     {
         if (_smashEffect)
         {
-            Debug.Log("Smash");
-            
             var obj = Instantiate(_smashEffect, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            obj.transform.SetParent(tr, true);
+
             StartCoroutine(Destroy(obj));
 
             IEnumerator Destroy(GameObject obj)
             {
-                var img = obj.GetComponent<SpriteRenderer>();
+                var img = obj.GetComponentInChildren<SpriteRenderer>();
                 yield return new WaitForSeconds(2);
 
-                while(img.color.a > 0)
+                while(img!= null && img.color.a > 0)
                 {
                     img.color = new Color(img.color.b, img.color.g, img.color.b, img.color.a-0.1f);
                     yield return new WaitForSeconds(1);

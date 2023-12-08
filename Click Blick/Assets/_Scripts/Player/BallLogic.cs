@@ -29,7 +29,7 @@ public class BallLogic : MonoBehaviour
         if (checkEqualMask(_borderLayer.value, collision))
         {
             _playerLogic.SetTrigger("borders");
-            _playerLogic.SmashBall();
+            _playerLogic.SmashBall(collision.gameObject.transform);
             playSound(2);
         }                       
     }
