@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2977494722799425026}
   - component: {fileID: 4206706586942490923}
   - component: {fileID: 8508867916040158610}
+  - component: {fileID: -2690811883777728853}
   m_Layer: 6
   m_Name: box
   m_TagString: Untagged
@@ -177,3 +178,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &-2690811883777728853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142589630407359281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef989520f1a67e04394b8465093b4857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLifeTime: 3
+  maxLifeTime: 12
+  maxScale: 2
+  effect: {fileID: 5075833673734158376, guid: e309836d20f03bf43b26c465b9eb575c, type: 3}

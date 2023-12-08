@@ -16,6 +16,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7443048063514962245, guid: 688b4796ebebf854fa31879434e9bbf6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443048063514962245, guid: 688b4796ebebf854fa31879434e9bbf6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.076167345
       objectReference: {fileID: 0}
@@ -61,3 +65,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688b4796ebebf854fa31879434e9bbf6, type: 3}
+--- !u!1 &6217973686670174320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5142589630407359281, guid: 688b4796ebebf854fa31879434e9bbf6, type: 3}
+  m_PrefabInstance: {fileID: 1230758243475264321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &-5694037021624675016
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217973686670174320}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e3833bcb9af5fc458ca427f19656b87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3777105479309751787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217973686670174320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef989520f1a67e04394b8465093b4857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLifeTime: 2
+  maxLifeTime: 8
+  maxScale: 5
+  effect: {fileID: 5075833673734158376, guid: e309836d20f03bf43b26c465b9eb575c, type: 3}

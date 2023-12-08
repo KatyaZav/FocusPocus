@@ -25,31 +25,32 @@ public class BallLogic : MonoBehaviour
     }
 
    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (_isNotPause)
+    {       
+        if (checkEqualMask(_borderLayer.value, collision))
         {
-            if (checkEqualMask(_borderLayer.value, collision))
-            {
-                _playerLogic.SetTrigger("borders");
-                _playerLogic.SmashBall();
-                playSound(2);
-            }
-
-            if (checkEqualMask(_enemyLayer.value, collision))
-            {
-                PlayerDead?.Invoke();
-            }            
-        }
+            _playerLogic.SetTrigger("borders");
+            _playerLogic.SmashBall();
+            playSound(2);
+        }                       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (checkEqualMask(_itemsLayer.value, collision))
+        if (_isNotPause)
         {
-            ICollecteble obj = collision.gameObject.GetComponent<ICollecteble>();
-            obj.Collect();
+            if (checkEqualMask(_itemsLayer.value, collision))
+            {
+                ICollecteble obj = collision.gameObject.GetComponent<ICollecteble>();
+                obj.Collect();
 
-            playSound(1);
+                playSound(1);
+            }
+
+            if (checkEqualMask(_enemyLayer.value, collision))
+            {
+                _playerLogic.MakeEffect();
+                PlayerDead?.Invoke();
+            }
         }
     }
 

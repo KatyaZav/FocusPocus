@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2940937998657597580}
   - component: {fileID: 2940937998657597581}
   - component: {fileID: 2940937998657597583}
+  - component: {fileID: 8352832455657413910}
   m_Layer: 7
   m_Name: knife
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1452326319
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 700aa24d7b87bde4dafcd7d792ad7c9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,7 +97,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -111,14 +112,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.18800001, y: -1.514}
-      - {x: 0.18400002, y: -1.4540001}
-      - {x: 0.18, y: -1.422}
-      - {x: 0.15200001, y: -1.3740001}
+    - - {x: 0.101939544, y: -1.488573}
+      - {x: 0.111631036, y: -1.4246612}
+      - {x: 0.09393984, y: -1.3887497}
+      - {x: 0.09527829, y: -1.3544409}
       - {x: 0.120000005, y: -1.35}
       - {x: 0.120000005, y: -0.62200004}
-      - {x: 0.14400001, y: -0.60200006}
-      - {x: 0.16800001, y: -0.578}
+      - {x: 0.101643756, y: -0.55227727}
+      - {x: 0.1643169, y: -0.5669505}
       - {x: 0.20400001, y: -0.586}
       - {x: 0.316, y: -0.61}
       - {x: 0.39200002, y: -0.63000005}
@@ -154,20 +155,21 @@ PolygonCollider2D:
       - {x: -0.43600002, y: -0.63000005}
       - {x: -0.41200003, y: -0.63000005}
       - {x: -0.29200003, y: -0.61}
-      - {x: -0.164, y: -0.578}
+      - {x: -0.18057427, y: -0.5706335}
+      - {x: -0.11799252, y: -0.55111456}
       - {x: -0.120000005, y: -0.62200004}
       - {x: -0.120000005, y: -1.3540001}
-      - {x: -0.136, y: -1.366}
-      - {x: -0.16000001, y: -1.394}
-      - {x: -0.18400002, y: -1.4460001}
-      - {x: -0.18400002, y: -1.5100001}
-      - {x: -0.164, y: -1.5580001}
-      - {x: -0.076000005, y: -1.6420001}
-      - {x: -0.028, y: -1.6700001}
-      - {x: 0.024, y: -1.6700001}
+      - {x: -0.11839667, y: -1.3718678}
+      - {x: -0.109676704, y: -1.3821594}
+      - {x: -0.035990357, y: -1.3927169}
+      - {x: -0.021189332, y: -1.4774379}
+      - {x: -0.11118999, y: -1.5325732}
+      - {x: -0.09360334, y: -1.6048378}
+      - {x: -0.04560304, y: -1.6191462}
+      - {x: 0.024, y: -1.6289256}
       - {x: 0.072000004, y: -1.6420001}
       - {x: 0.120000005, y: -1.6060001}
-      - {x: 0.16800001, y: -1.554}
+      - {x: 0.111278445, y: -1.5442203}
 --- !u!95 &2940937998657597583
 Animator:
   serializedVersion: 5
@@ -189,3 +191,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &8352832455657413910
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940937998657597680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0004043579, y: -1.0977973}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.672, y: 3.34}
+    newSize: {x: 4.18, y: 8.35}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.27294338, y: 1.1194637}
+  m_EdgeRadius: 0
