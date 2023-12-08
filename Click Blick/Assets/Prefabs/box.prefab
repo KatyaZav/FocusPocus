@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef989520f1a67e04394b8465093b4857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minLifeTime: 3
-  maxLifeTime: 7
+  minLifeTime: 5
+  maxLifeTime: 10
   maxScale: 1
   effect: {fileID: 5075833673734158376, guid: e309836d20f03bf43b26c465b9eb575c, type: 3}
 --- !u!95 &3217338156826344613
