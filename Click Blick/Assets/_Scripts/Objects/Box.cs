@@ -11,6 +11,7 @@ public class Box : MonoBehaviour
 
     [SerializeField] GameObject effect;
 
+    SpriteRenderer sprite;
     int lifeTime;
 
     private void Start()
@@ -20,6 +21,7 @@ public class Box : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, Random.Range(0, 180))); 
 
         Invoke("OnDestroy", lifeTime);
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void OnDestroy()
@@ -27,11 +29,11 @@ public class Box : MonoBehaviour
         var ef = Instantiate(effect, gameObject.transform.position, gameObject.transform.rotation);
 
         ef.transform.localScale = transform.localScale;
-        
-
 
         //ef.GetComponent<ParticleSystem>().s .shape.scale.x = transform.localScale.x;
         //ef.transform.localScale = transform.localScale;
+
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);        
 
         Destroy(gameObject, 0.2f);
     }

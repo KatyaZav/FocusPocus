@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2690811883777728853, guid: 688b4796ebebf854fa31879434e9bbf6, type: 3}
+      propertyPath: maxScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5142589630407359281, guid: 688b4796ebebf854fa31879434e9bbf6, type: 3}
       propertyPath: m_Name
       value: static box
@@ -91,19 +95,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3777105479309751787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6217973686670174320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef989520f1a67e04394b8465093b4857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minLifeTime: 2
-  maxLifeTime: 8
-  maxScale: 5
-  effect: {fileID: 5075833673734158376, guid: e309836d20f03bf43b26c465b9eb575c, type: 3}
