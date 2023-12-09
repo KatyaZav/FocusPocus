@@ -67,5 +67,8 @@ public class Saves : MonoBehaviour
             YG.YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
         }
         else Points = 0;
+
+        YG.YandexGame.NewLeaderboardScores("DiamondsLeaderBoard", Diamonds);
+
     }
 }
