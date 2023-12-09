@@ -13,7 +13,7 @@ public class RewardVideoLogic : MonoBehaviour
 
     public static Action<bool> ChangeGamePauseSettingsToResume;
 
-    private void Awake()
+    private void OnEnable()
     {
         if (Instance == null)
             Instance = this;
@@ -22,7 +22,7 @@ public class RewardVideoLogic : MonoBehaviour
         YG.YandexGame.RewardVideoEvent += Continue;
         YG.YandexGame.ErrorVideoEvent += EndGame;
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         BallLogic.PlayerDead -= OnGameEnd;
         YG.YandexGame.RewardVideoEvent -= Continue;
@@ -31,7 +31,10 @@ public class RewardVideoLogic : MonoBehaviour
 
     void Continue(int a)
     {
-        ChangeGamePauseSettingsToResume?.Invoke(true);
+        Debug.Log("Continue " + a.ToString());
+
+        if (a==10)
+            ChangeGamePauseSettingsToResume?.Invoke(true);
     }
 
     /// <summary>

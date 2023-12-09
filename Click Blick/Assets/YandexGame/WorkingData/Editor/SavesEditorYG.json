@@ -1,5 +1,5 @@
 {
-  "idSave": 86,
+  "idSave": 113,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -10,11 +10,11 @@
     true,
     false
   ],
-  "Diamond": 24,
+  "Diamond": 14,
   "Record": 13,
-  "currentSkin": 2,
+  "currentSkin": 3,
   "skins": {
-    "skin1": 0,
+    "skin1": 1,
     "skin2": 0,
     "skin3": 0,
     "skin4": 0,

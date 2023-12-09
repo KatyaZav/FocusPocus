@@ -8,23 +8,44 @@ public class ObjManager : MonoBehaviour
     [SerializeField] Transform right;
 
     [SerializeField] ProbabilityObj[] objs;
+    bool pause = false;
 
-    void Start()
+    private void OnDisable()
     {
+        RewardVideoLogic.ChangeGamePauseSettingsToResume -= ChangePause;
+    }
+
+    private void OnEnable()
+    {
+        RewardVideoLogic.ChangeGamePauseSettingsToResume += ChangePause;
+
         foreach (var obj in objs)
         {
             StartCoroutine(Generator(obj));
         }
     }
 
+    void ChangePause(bool isPause)
+    {
+        pause = isPause;
+    }
+
+
     IEnumerator Generator(ProbabilityObj obj)
     {
         while (true)
         {
-            yield return new WaitForSeconds(obj.GetTimeBetween());
+            //Debug.Log(pause + " " + obj.GetGeneratedObject().name);
 
-            Instantiate(obj.GetGeneratedObject(), RandomPosition(), Quaternion.identity);
-            obj.UpdateTime();
+            if (!pause)
+            {
+                yield return new WaitForSeconds(obj.GetTimeBetween());
+
+                Instantiate(obj.GetGeneratedObject(), RandomPosition(), Quaternion.identity);
+                obj.UpdateTime();
+            }
+            else 
+                yield return new WaitForFixedUpdate();
         }
     }
 

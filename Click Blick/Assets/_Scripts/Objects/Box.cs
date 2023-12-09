@@ -17,6 +17,8 @@ public class Box : MonoBehaviour
 
     private void Start()
     {
+        BallLogic.StartedAgain += OnDestroy;
+
         if (maxScale > 1)
             transform.localScale =  new Vector3(Random.Range(1, maxScale), 1, 1);
 
@@ -42,6 +44,7 @@ public class Box : MonoBehaviour
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
         anim.SetTrigger("destroy");
 
+        BallLogic.StartedAgain -= OnDestroy;
         Destroy(gameObject, 0.2f);
     }
 }

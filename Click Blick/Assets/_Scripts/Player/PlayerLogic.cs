@@ -104,4 +104,9 @@ public class PlayerLogic : MonoBehaviour
             }
         }
     }
+
+    public void MakeVelocity()
+    {
+        _rb.velocity = new Vector3(0, 0, 0);
+    }
 }

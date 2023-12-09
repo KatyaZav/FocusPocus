@@ -91,6 +91,8 @@ public class BallLogic : MonoBehaviour
         }
     }
 
+    public static Action StartedAgain;
+
     private void ChangePause(bool pause)
     {
         _isNotPause = pause;
@@ -99,7 +101,11 @@ public class BallLogic : MonoBehaviour
             GetComponent<Rigidbody2D>().Sleep();
         else
         {
+            StartedAgain?.Invoke();
+
+            ImageTimer.pause = true;
             transform.position = new Vector2(0, 0);
+            _playerLogic.MakeVelocity();
             GetComponent<Rigidbody2D>().WakeUp();
         }
     }

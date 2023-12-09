@@ -36,6 +36,8 @@ public class UiManager : MonoBehaviour
     /// </summary>
     private void UpdateSkin()
     {
+        if (_playerImage == null) return;
+
         var _skin = AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin];
 
         _skin.isBought = PlayerPrefs.GetInt("skin" + AllSkins.currentSkin.ToString(), 0) == 1;
@@ -68,7 +70,8 @@ public class UiManager : MonoBehaviour
     /// </summary>
     public void ChangeScene(string name)
     {
-        YG.YandexGame.SaveProgress();
+        //YG.YandexGame.SaveProgress();
+        LoadAndSaveProgress.SaveProgress();
         SceneManager.LoadScene(name);
     }
     

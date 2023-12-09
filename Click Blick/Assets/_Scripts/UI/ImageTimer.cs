@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class ImageTimer : MonoBehaviour
 {
     [SerializeField] Image _img;
+    public static bool pause = false;
 
     private void OnEnable()
     {
+        pause = true;
         StartCoroutine(TimerLogic());
     }
 
@@ -24,6 +26,7 @@ public class ImageTimer : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         RewardVideoLogic.Instance.EndGame();
         gameObject.SetActive(false);
+        pause = false;
     }
 
     /// <summary>
@@ -31,6 +34,7 @@ public class ImageTimer : MonoBehaviour
     /// </summary>
     public void StopTimer()
     {
+        pause = false;
         StopCoroutine(TimerLogic());
     }
 }
