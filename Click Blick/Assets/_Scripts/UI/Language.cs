@@ -11,7 +11,7 @@ public class Language : MonoBehaviour
     {
         var y = YG.YandexGame.EnvironmentData.language == "ru";
 
-        rus.SetActive(y);
-        eng.SetActive(!y);
+        rus.SetActive(!y);
+        eng.SetActive(y);
     }
 }
