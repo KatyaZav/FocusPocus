@@ -86,12 +86,17 @@ public class UiManager : MonoBehaviour
 
     public void MuteSound(bool isMute)
     {
-        PlayerSetting.UpdateSoundMute(isMute);       
+        PlayerSetting.UpdateSoundMute(isMute);      
     }
 
     public void MuteMusic(bool isMute)
     {
         PlayerSetting.UpdateMusicMute(isMute);
+
+        if (isMute)
+            MusicBox.Instance.music.Pause();
+        else
+            MusicBox.Instance.music.Play();
     }
 
     public static Action Bought;

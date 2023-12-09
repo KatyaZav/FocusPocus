@@ -10,17 +10,21 @@ public class MusicBox : MonoBehaviour
 
     public static MusicBox Instance;
 
-    AudioSource sound;
-    AudioSource music;
+    public AudioSource sound;
+    public AudioSource music;
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         var ite = GetComponentsInChildren<AudioSource>();
         music = ite[0];
         sound = ite[1];
 
         if (Instance == null)
             Instance = this;
+        else
+            Destroy(gameObject);
 
         UpdateVolumeSettings(PlayerSetting.IsMusicMute, PlayerSetting.IsSoundMute);
     }

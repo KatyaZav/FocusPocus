@@ -8529,10 +8529,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2027797026210485584, guid: e2dabba18fdb1904eaa4edadb8c1a205, type: 3}
-      propertyPath: m_Volume
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2027797026210485585, guid: e2dabba18fdb1904eaa4edadb8c1a205, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8580,10 +8576,6 @@ PrefabInstance:
     - target: {fileID: 2027797026210485587, guid: e2dabba18fdb1904eaa4edadb8c1a205, type: 3}
       propertyPath: m_Name
       value: MusicBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027797026210485590, guid: e2dabba18fdb1904eaa4edadb8c1a205, type: 3}
-      propertyPath: _pitch
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2dabba18fdb1904eaa4edadb8c1a205, type: 3}
