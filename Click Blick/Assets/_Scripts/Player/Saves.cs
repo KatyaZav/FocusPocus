@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class Saves : MonoBehaviour
 {
@@ -64,11 +65,18 @@ public class Saves : MonoBehaviour
         {
             Record = Points;
             PlayerPrefs.SetInt(Records, Record);
-            YG.YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
+            YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
         }
         else Points = 0;
 
-        YG.YandexGame.NewLeaderboardScores("DiamondsLeaderBoard", Diamonds);
+        YandexGame.NewLeaderboardScores("DiamondsLeaderBoard", Diamonds);
 
+        var eventParams = new Dictionary<string, string>
+        {
+            { "Game points", Points.ToString()},
+            { "Game records", Records.ToString()},
+        };
+
+        YandexMetrica.Send(AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Name, eventParams);
     }
 }

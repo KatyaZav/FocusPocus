@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
+using YG;
 
 public class UiManager : MonoBehaviour
 {
@@ -71,6 +72,14 @@ public class UiManager : MonoBehaviour
     public void ChangeScene(string name)
     {
         //YG.YandexGame.SaveProgress();
+
+        var eventParams = new Dictionary<string, string>
+        {
+            { "Skin name", AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Name},
+            { "Diamonds", Saves.Diamonds.ToString()},
+        };
+        YandexMetrica.Send("Best skin", eventParams);
+
         LoadAndSaveProgress.SaveProgress();
         SceneManager.LoadScene(name);
     }
