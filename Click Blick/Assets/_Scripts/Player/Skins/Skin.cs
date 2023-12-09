@@ -13,7 +13,7 @@ public class Skin
     public GameObject SmashMaskSprite;
     
     [SerializeField] GameObject[] Effect;
-    [SerializeField] AudioSource[] Sound;
+    [SerializeField] AudioClip[] Sound;
     //[SerializeField] GameObject BloopMaskEffect;
 
     public float mass = 1, gravity = 0.2f;
@@ -33,7 +33,7 @@ public class Skin
     /// <summary>
     /// Return sound effect
     /// </summary>
-    public AudioSource ReturnSound(){
+    public AudioClip ReturnSound(){
         if (Sound.Length == 0)
             return null;
 
