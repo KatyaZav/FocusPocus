@@ -5488,7 +5488,7 @@ MonoBehaviour:
     Effect:
     - {fileID: 2822122297460757051, guid: 1a59a8fba7d28814f92a62d51b0159db, type: 3}
     Sound: []
-    mass: 1.5
+    mass: 1.3
     gravity: 0.2
     BallMaterial: {fileID: 6200000, guid: f885fd7a9b7fe6f4b849a5b59cd01e96, type: 2}
   - Name: Cactus
@@ -5510,7 +5510,7 @@ MonoBehaviour:
     Effect:
     - {fileID: 2822122297460757051, guid: 695a1f6147965944f8a8558b64216b07, type: 3}
     Sound: []
-    mass: 0.6
+    mass: 0.7
     gravity: 0.2
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Eath
@@ -5521,7 +5521,7 @@ MonoBehaviour:
     Effect:
     - {fileID: 2822122297460757051, guid: 62c5617cecf78c94898a90b9937aa616, type: 3}
     Sound: []
-    mass: 2
+    mass: 4
     gravity: 0.02
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
 --- !u!114 &1487264406
