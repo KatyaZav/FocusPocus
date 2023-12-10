@@ -8,14 +8,23 @@ public class changeUIDevice : MonoBehaviour
     [SerializeField] GameObject mobile;
     [SerializeField] GameObject pc;
 
-    private void Awake()
+    private void OnEnable() => YandexGame.GetDataEvent += Starter;
+    private void OnDisable() => YandexGame.GetDataEvent -= Starter;
+
+    private void Start()
+    {
+        if (YandexGame.SDKEnabled)
+            Starter();
+    }
+
+    private void Starter()
     {
         if (YandexGame.EnvironmentData.isMobile)
         {
             ChangeToPc(false);
         }
-
-        if (YandexGame.EnvironmentData.isDesktop || YandexGame.EnvironmentData.isTablet)
+        else
+       // if (YandexGame.EnvironmentData.isDesktop)
         {
             ChangeToPc(true);
         }

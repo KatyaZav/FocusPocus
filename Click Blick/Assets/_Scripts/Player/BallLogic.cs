@@ -8,7 +8,7 @@ public class BallLogic : MonoBehaviour
     [SerializeField] SoundsMassive[] _sounds;
     [SerializeField] PlayerLogic _playerLogic;
     
-    [SerializeField] LayerMask _borderLayer, _enemyLayer, _itemsLayer;
+    [SerializeField] LayerMask _borderLayer, _enemyLayer, _itemsLayer, bamLayer;
 
     public static Action PlayerDead;
 
@@ -21,7 +21,7 @@ public class BallLogic : MonoBehaviour
     
     void OnMouseDown()
     {
-        OnTouched();
+        //OnTouched();
     }
 
    void OnCollisionEnter2D(Collision2D collision)
@@ -31,7 +31,7 @@ public class BallLogic : MonoBehaviour
             _playerLogic.SetTrigger("borders");
             _playerLogic.SmashBall(collision.gameObject.transform);
             playSound(2);
-        }                       
+        }        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,6 +51,9 @@ public class BallLogic : MonoBehaviour
                 _playerLogic.MakeEffect();
                 PlayerDead?.Invoke();
             }
+
+            if (checkEqualMask(bamLayer.value, collision))
+                OnTouched();
         }
     }
 

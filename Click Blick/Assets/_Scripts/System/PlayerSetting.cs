@@ -13,7 +13,7 @@ public static class PlayerSetting
     public static void UpdateSoundMute(bool isMute)
     {
         IsSoundMute = isMute;
-        Debug.Log("Save to YSDK");
+        YG.YandexGame.savesData.isSound = isMute;
         MusicBox.Instance.UpdateVolumeSettings(IsMusicMute, IsSoundMute);
     }
 
@@ -23,7 +23,7 @@ public static class PlayerSetting
     public static void UpdateMusicMute(bool isMute)
     {
         IsMusicMute = isMute;
-        Debug.Log("Save to YSDK");
+        YG.YandexGame.savesData.isMusic = isMute;
         MusicBox.Instance.UpdateVolumeSettings(IsMusicMute, IsSoundMute);
     }    
 }

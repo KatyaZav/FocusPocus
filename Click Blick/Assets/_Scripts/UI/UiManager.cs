@@ -9,13 +9,40 @@ using YG;
 
 public class UiManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] soundGM; 
+    [SerializeField] GameObject[] musicGM; 
+
     void Start()
+    {
+        if (YandexGame.SDKEnabled)
+            Starter();
+    }
+
+    private void OnEnable() => YandexGame.GetDataEvent += Starter;
+    private void OnDisable() => YandexGame.GetDataEvent -= Starter;
+
+    void Starter()
     {
         AllSkins.ChangedSkin += UpdateSkin;
         YG.YandexGame.RewardVideoEvent += Try;
 
         AllSkins.currentSkin = PlayerPrefs.GetInt("currentSkin", 0);
-        UpdateSkin();        
+        UpdateSkin();
+
+        if (soundGM != null)
+        {
+            MuteMusic(YG.YandexGame.savesData.isMusic);
+            MuteSound(YG.YandexGame.savesData.isSound);
+
+            Act(musicGM, !YG.YandexGame.savesData.isMusic);
+            Act(soundGM, !YG.YandexGame.savesData.isSound);
+        }
+    }
+
+    void Act(GameObject[] objs, bool isFirst)
+    {
+        objs[0].SetActive(isFirst);
+        objs[1].SetActive(!isFirst);
     }
 
     private void OnDestroy()

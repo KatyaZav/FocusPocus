@@ -1,7 +1,7 @@
 {
-    "idSave": 160,
+    "idSave": 182,
     "isFirstSession": false,
-    "language": "ru",
+    "language": "en",
     "promptDone": false,
     "money": 1,
     "newPlayerName": "Hello!",
@@ -10,7 +10,9 @@
         true,
         false
     ],
-    "Diamond": 11,
+    "Diamond": 12,
     "Record": 13,
-    "currentSkin": 2
+    "currentSkin": 0,
+    "isSound": false,
+    "isMusic": true
 }

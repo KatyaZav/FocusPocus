@@ -12,7 +12,7 @@ public class LoadAndSaveProgress : MonoBehaviour
     {
         if (YandexGame.SDKEnabled == true)
             loadProgress();
-        YandexGame.savesData.skins["skin" + 0] = 1;
+        //YandexGame.savesData.skins["skin0"] = 1;
     }
 
     private static void loadProgress()
@@ -34,6 +34,8 @@ public class LoadAndSaveProgress : MonoBehaviour
 
     public static void SaveProgress()
     {
+        Debug.Log("Save progress data");
+
         YandexGame.savesData.Diamond = PlayerPrefs.GetInt(Saves.Diamond);
         YandexGame.savesData.Record = PlayerPrefs.GetInt(Saves.Records);
 

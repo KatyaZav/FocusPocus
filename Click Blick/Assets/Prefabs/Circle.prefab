@@ -185,6 +185,9 @@ MonoBehaviour:
   _itemsLayer:
     serializedVersion: 2
     m_Bits: 256
+  bamLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &7532684256518028380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +203,4 @@ MonoBehaviour:
   _sprite: {fileID: 7532684256518028377}
   _anim: {fileID: 7532684256518028382}
   _rb: {fileID: 7532684256518028378}
+  _smashEffect: {fileID: 0}

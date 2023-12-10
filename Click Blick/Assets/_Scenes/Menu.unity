@@ -4384,7 +4384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1152606571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5132,6 +5132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe17c69b84312c41bd6cdd0ece3d54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundGM:
+  - {fileID: 1649594223}
+  - {fileID: 790020079}
+  musicGM:
+  - {fileID: 1577977192}
+  - {fileID: 23694366}
   _playerImage: {fileID: 1816338886}
   _cost: {fileID: 1827657777}
   _buttonStart: {fileID: 16057779}
@@ -6174,7 +6180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.01604, y: -35.264145}
+  m_AnchoredPosition: {x: 144.01605, y: -35.264145}
   m_SizeDelta: {x: 288.03207, y: 70.52829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598367377
@@ -7069,6 +7075,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe17c69b84312c41bd6cdd0ece3d54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundGM:
+  - {fileID: 1596078427}
+  - {fileID: 634510839}
+  musicGM:
+  - {fileID: 506749573}
+  - {fileID: 658358357}
   _playerImage: {fileID: 1776942278}
   _cost: {fileID: 1885382877}
   _buttonStart: {fileID: 199850720}
