@@ -68,11 +68,11 @@ public class UiManager : MonoBehaviour
 
         var _skin = AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin];
 
-        _skin.isBought = PlayerPrefs.GetInt("skin" + AllSkins.currentSkin.ToString(), 0) == 1;
-           
+        _skin.isBought = PlayerPrefs.GetInt("skin" + AllSkins.currentSkin.ToString()) == 1;
+
         _playerImage.sprite = _skin.SpriteImage;
 
-        if (_skin.Cost == 0 || _skin.isBought)
+        if (_skin.isBought)
         {
             _cost.text = "";
 
@@ -135,13 +135,15 @@ public class UiManager : MonoBehaviour
             Debug.LogWarning("didn't bought");
 
         Bought?.Invoke();
-
         PlayerPrefs.SetInt("skin" + AllSkins.currentSkin.ToString(), 1);
+
         _cost.text = "";
 
         _buttonStart.gameObject.SetActive(true);
         _buttonBuy.gameObject.SetActive(false);
         _buttonTry.gameObject.SetActive(false);
+
+        LoadAndSaveProgress.SaveProgress();
     }
 
     public void Try(int u)

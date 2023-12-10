@@ -9,7 +9,7 @@ public class LoadAndSaveProgress : MonoBehaviour
     private void OnDisable() => YandexGame.GetDataEvent -= loadProgress;
 
     private void Awake()
-    {
+    {        
         if (YandexGame.SDKEnabled == true)
             loadProgress();
         //YandexGame.savesData.skins["skin0"] = 1;
@@ -18,17 +18,29 @@ public class LoadAndSaveProgress : MonoBehaviour
     private static void loadProgress()
     {
         Debug.Log("LoadProgress");
+
+        Debug.Log(YandexGame.savesData.skins);
+
+        /*if (!YandexGame.savesData.skins.ContainsKey("skin0"))
+        {
+            YandexGame.savesData.skins["skin0"] = 1;
+        }*/
+
         PlayerPrefs.SetInt(Saves.Diamond, YandexGame.savesData.Diamond);
         PlayerPrefs.SetInt(Saves.Records, YandexGame.savesData.Record);
 
         PlayerPrefs.SetInt("currentSkin", YandexGame.savesData.currentSkin);
 
-        for (var i = 1; i < 6; i++)
-        {
-            if (!YandexGame.savesData.skins.ContainsKey("skin" + i))
-                YandexGame.savesData.skins["skin" + i] = 0;
+        PlayerPrefs.SetInt("skin0", (YandexGame.savesData.skins["skin0"]));
 
-            PlayerPrefs.SetInt("skin"+i, YandexGame.savesData.skins["skin"+i]);
+        for (var i = 1; i <= AllSkins.Instanse.AllSkinsInfo.Length+1; i++)
+        {
+            if (!YandexGame.savesData.skins.ContainsKey("skin" + i.ToString()))
+                YandexGame.savesData.skins["skin" + i.ToString()] = 0;
+
+            //Debug.Log(YandexGame.savesData.skins["skin" + i.ToString()]);
+            PlayerPrefs.SetInt("skin"+i.ToString(), YandexGame.savesData.skins["skin"+i.ToString()]);
+            //Debug.Log(YandexGame.savesData.skins["skin" + i.ToString()]);
         }
     }
 
@@ -41,9 +53,10 @@ public class LoadAndSaveProgress : MonoBehaviour
 
         YandexGame.savesData.currentSkin = PlayerPrefs.GetInt("currentSkin");
 
-        for (var i = 1; i < 6; i++)
+        for (var i = 1; i <= AllSkins.Instanse.AllSkinsInfo.Length+1; i++)
         {
-            YandexGame.savesData.skins["skin" + i] = PlayerPrefs.GetInt("skin" + i, 0);
+            YandexGame.savesData.skins["skin" + i.ToString()] = PlayerPrefs.GetInt("skin" + i.ToString());
+            Debug.Log(YandexGame.savesData.skins["skin" + i.ToString()]);
         }
 
         YandexGame.SaveProgress();

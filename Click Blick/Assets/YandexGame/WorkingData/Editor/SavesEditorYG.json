@@ -1,18 +1,27 @@
 {
-    "idSave": 24,
-    "isFirstSession": false,
-    "language": "ru",
-    "promptDone": false,
-    "money": 1,
-    "newPlayerName": "Hello!",
-    "openLevels": [
-        false,
-        true,
-        false
-    ],
-    "Diamond": 0,
-    "Record": 0,
-    "currentSkin": 0,
-    "isSound": false,
-    "isMusic": false
+  "idSave": 32,
+  "isFirstSession": false,
+  "language": "ru",
+  "promptDone": false,
+  "money": 1,
+  "newPlayerName": "Hello!",
+  "openLevels": [
+    false,
+    true,
+    false
+  ],
+  "Diamond": 7,
+  "Record": 13,
+  "currentSkin": 1,
+  "isSound": false,
+  "isMusic": false,
+  "skins": {
+    "skin0": 1,
+    "skin1": 1,
+    "skin2": 0,
+    "skin3": 0,
+    "skin4": 0,
+    "skin5": 0,
+    "skin6": 0
+  }
 }

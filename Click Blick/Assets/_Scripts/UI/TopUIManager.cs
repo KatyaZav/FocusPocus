@@ -12,12 +12,12 @@ public class TopUIManager : MonoBehaviour
     public GameObject effect;
     public bool NeedActive = false;
 
-    private void Awake()
+    private void OnEnable()
     {
         Object.CollectedObj += UpdateUI;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         Object.CollectedObj -= UpdateUI;
     }
