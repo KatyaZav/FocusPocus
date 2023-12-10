@@ -10,6 +10,9 @@ public class ButtonActivator : MonoBehaviour
 
     void Start()
     {
+        //Debug.Log("skin" + AllSkins.currentSkin);
+        //Debug.Log(YG.YandexGame.savesData.skins["skin" + AllSkins.currentSkin]);
+
         if ((YG.YandexGame.savesData.skins["skin" + AllSkins.currentSkin] == 0))
         {
             retryButtonText.SetActive(true);

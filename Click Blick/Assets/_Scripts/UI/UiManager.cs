@@ -29,7 +29,7 @@ public class UiManager : MonoBehaviour
         AllSkins.currentSkin = PlayerPrefs.GetInt("currentSkin", 0);
         UpdateSkin();
 
-        if (soundGM != null)
+        if (soundGM.Length == 2)
         {
             MuteMusic(YG.YandexGame.savesData.isMusic);
             MuteSound(YG.YandexGame.savesData.isSound);
@@ -98,14 +98,7 @@ public class UiManager : MonoBehaviour
     /// </summary>
     public void ChangeScene(string name)
     {
-        //YG.YandexGame.SaveProgress();
-
-        var eventParams = new Dictionary<string, string>
-        {
-            { "Skin name", AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Name},
-            { "Diamonds", Saves.Diamonds.ToString()},
-        };
-        YandexMetrica.Send("Best skin", eventParams);
+        //YG.YandexGame.SaveProgress();                   
 
         LoadAndSaveProgress.SaveProgress();
         SceneManager.LoadScene(name);

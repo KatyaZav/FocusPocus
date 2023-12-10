@@ -56,6 +56,7 @@ public class RewardVideoLogic : MonoBehaviour
     /// </summary>
     public void EndGame()
     {
+        Debug.Log("End game");
         ChangeGamePauseSettingsToResume?.Invoke(false);
         EndMenu.SetActive(true);
     }

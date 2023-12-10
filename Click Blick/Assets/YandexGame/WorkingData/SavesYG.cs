@@ -23,10 +23,10 @@ namespace YG
         public int Record = 0;
         public int currentSkin = 0;
 
-        public bool isSound = true;
-        public bool isMusic = true;
+        public bool isSound = false;
+        public bool isMusic = false;
 
-        public Dictionary<string, int> skins = new Dictionary<string, int>() { { "skin0", 0 } }; 
+        public Dictionary<string, int> skins = new Dictionary<string, int>() { { "skin0", 1 } }; 
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 
