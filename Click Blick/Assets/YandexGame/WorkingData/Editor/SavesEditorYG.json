@@ -1,5 +1,5 @@
 {
-  "idSave": 117,
+  "idSave": 127,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
@@ -10,8 +10,8 @@
     true,
     false
   ],
-  "Diamond": 27,
-  "Record": 13,
+  "Diamond": 43,
+  "Record": 20,
   "currentSkin": 1,
   "isSound": false,
   "isMusic": false,

@@ -7,7 +7,12 @@ using UnityEngine.UI;
 public class UpdateValue : MonoBehaviour
 {
     [SerializeField] Value _valueUI;
-    Text _text;
+    [SerializeField] Text _text;
+
+    private void OnValidate()
+    {
+        _text ??= GetComponentInChildren<Text>();
+    }
 
     private void OnDisable()
     {
@@ -15,8 +20,7 @@ public class UpdateValue : MonoBehaviour
     }
 
     private void OnEnable()
-    {
-        _text = GetComponentInChildren<Text>();
+    {        
         UiManager.Bought += UpdateValueUI;
 
         UpdateValueUI();

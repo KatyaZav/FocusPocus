@@ -32,19 +32,25 @@ public class Box : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (effect != null)
-        {
-            var ef = Instantiate(effect, gameObject.transform.position, gameObject.transform.rotation);
+        try{
+            if (effect != null)
+            {
+                var ef = Instantiate(effect, gameObject.transform.position, gameObject.transform.rotation);
+                //ef.transform.localScale = transform.localScale;
+            }
+
+            //ef.GetComponent<ParticleSystem>().s .shape.scale.x = transform.localScale.x;
             //ef.transform.localScale = transform.localScale;
+
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
+            anim.SetTrigger("destroy");
+
+            BallLogic.StartedAgain -= OnDestroy;
+            Destroy(gameObject, 0.2f);
         }
+        catch (System.Exception e)
+        {
 
-        //ef.GetComponent<ParticleSystem>().s .shape.scale.x = transform.localScale.x;
-        //ef.transform.localScale = transform.localScale;
-
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
-        anim.SetTrigger("destroy");
-
-        BallLogic.StartedAgain -= OnDestroy;
-        Destroy(gameObject, 0.2f);
+        }
     }
 }
