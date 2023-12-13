@@ -9,6 +9,7 @@ public class BallLogic : MonoBehaviour
     [SerializeField] PlayerLogic _playerLogic;
     
     [SerializeField] LayerMask _borderLayer, _enemyLayer, _itemsLayer, bamLayer;
+    [SerializeField] GameObject dead;
 
     public static Action PlayerDead;
 
@@ -48,7 +49,9 @@ public class BallLogic : MonoBehaviour
 
             if (checkEqualMask(_enemyLayer.value, collision))
             {
-                _playerLogic.MakeEffect();
+                dead.SetActive(true);
+                //Instantiate(dead, gameObject.transform.position, Quaternion.identity);
+                //_playerLogic.MakeEffect();
                 PlayerDead?.Invoke();
             }
 
