@@ -19,12 +19,14 @@ public class changeUIDevice : MonoBehaviour
 
     private void Starter()
     {
+        Debug.Log(YandexGame.EnvironmentData.deviceType);
+
         if (YandexGame.EnvironmentData.isDesktop)
         {
             ChangeToPc(true);
         }
 
-       //if (YandexGame.EnvironmentData.isMobile)
+       if (YandexGame.EnvironmentData.isMobile)
         {
             ChangeToPc(false);
         }

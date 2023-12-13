@@ -56,7 +56,7 @@ public class LoadAndSaveProgress : MonoBehaviour
         for (var i = 1; i <= AllSkins.Instanse.AllSkinsInfo.Length+1; i++)
         {
             YandexGame.savesData.skins["skin" + i.ToString()] = PlayerPrefs.GetInt("skin" + i.ToString());
-            Debug.Log(YandexGame.savesData.skins["skin" + i.ToString()]);
+            //Debug.Log(YandexGame.savesData.skins["skin" + i.ToString()]);
         }
 
         YandexGame.SaveProgress();

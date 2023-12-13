@@ -9,7 +9,8 @@ public class RewardVideoLogic : MonoBehaviour
     private bool isFirstAd = true;
 
     [SerializeField] private GameObject Video;
-    [SerializeField] private GameObject EndMenu;
+    [SerializeField] private GameObject EndMenuPc;
+    [SerializeField] private GameObject EndMenuMobile;
 
     public static Action<bool> ChangeGamePauseSettingsToResume;
 
@@ -56,8 +57,11 @@ public class RewardVideoLogic : MonoBehaviour
     /// </summary>
     public void EndGame()
     {
-        Debug.Log("End game");
+        EndMenuPc.SetActive(true);
+        EndMenuMobile.SetActive(true);
+
+        Debug.Log("End game" + gameObject.name);
+
         ChangeGamePauseSettingsToResume?.Invoke(false);
-        EndMenu.SetActive(true);
     }
 }

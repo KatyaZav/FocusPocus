@@ -15,6 +15,7 @@ public class TopUIManager : MonoBehaviour
     private void OnEnable()
     {
         Object.CollectedObj += UpdateUI;
+        Saves.ResetPoints();
     }
 
     private void OnDisable()
