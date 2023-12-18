@@ -1337,6 +1337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _valueUI: 0
+  _text: {fileID: 1116385474}
 --- !u!114 &315618113 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607, type: 3}
@@ -1636,6 +1637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _valueUI: 0
+  _text: {fileID: 5000706}
 --- !u!222 &411189466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4936,6 +4938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _valueUI: 2
+  _text: {fileID: 187399424}
 --- !u!222 &1316779997
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5455,7 +5458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487264403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28017527, y: 0.11218105, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5548,6 +5551,27 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 351e868eb2d43754a8618e32bc8d1f97, type: 3}
     mass: 2.5
     gravity: 0.05
+    BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
+  - Name: Snow
+    isBought: 0
+    Cost: 120
+    SpriteImage: {fileID: 21300000, guid: 7c37ea616d2b79d4f96c3c0d71e213c5, type: 3}
+    SmashMaskSprite: {fileID: 2920526213212046484, guid: 4e0b9ff4157eb7f4880b3403ce081e70, type: 3}
+    Effect:
+    - {fileID: 3015522937422959141, guid: 3b04b93622bd7c5499553047fb9d7ab4, type: 3}
+    Sound: []
+    mass: 1.8
+    gravity: 0.1
+    BallMaterial: {fileID: 6200000, guid: d894af5efcd042e468f61f16682b6a89, type: 2}
+  - Name: Pumkin
+    isBought: 0
+    Cost: 120
+    SpriteImage: {fileID: 21300000, guid: bc8ea01fcf9b0f74d846b1913562a779, type: 3}
+    SmashMaskSprite: {fileID: 0}
+    Effect: []
+    Sound: []
+    mass: 2
+    gravity: 0.1
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
 --- !u!114 &1487264406
 MonoBehaviour:
@@ -7772,6 +7796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _valueUI: 2
+  _text: {fileID: 365315141}
 --- !u!1 &1942181025
 GameObject:
   m_ObjectHideFlags: 0
