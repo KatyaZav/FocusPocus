@@ -5496,7 +5496,7 @@ MonoBehaviour:
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Football
     isBought: 0
-    Cost: 10
+    Cost: 5
     SpriteImage: {fileID: 21300000, guid: 3a201abc31b9cb44a82902be67cf794f, type: 3}
     SmashMaskSprite: {fileID: 0}
     Effect:
@@ -5511,7 +5511,7 @@ MonoBehaviour:
     BallMaterial: {fileID: 6200000, guid: f885fd7a9b7fe6f4b849a5b59cd01e96, type: 2}
   - Name: Cactus
     isBought: 0
-    Cost: 40
+    Cost: 15
     SpriteImage: {fileID: 21300000, guid: 9ba9f132125bb174f9850b41d62474d9, type: 3}
     SmashMaskSprite: {fileID: 0}
     Effect:
@@ -5526,7 +5526,7 @@ MonoBehaviour:
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Tomato
     isBought: 0
-    Cost: 60
+    Cost: 25
     SpriteImage: {fileID: 21300000, guid: b46a5d5dec9387f468d6791b93c2042a, type: 3}
     SmashMaskSprite: {fileID: 1965643841571101673, guid: fd812f508c1f8ad4587244476bc8b6cc, type: 3}
     Effect:
@@ -5541,7 +5541,7 @@ MonoBehaviour:
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Eath
     isBought: 0
-    Cost: 100
+    Cost: 40
     SpriteImage: {fileID: 21300000, guid: c326fa5e9c715bc4cbc25ce349e5a8d7, type: 3}
     SmashMaskSprite: {fileID: 0}
     Effect:
@@ -5554,7 +5554,7 @@ MonoBehaviour:
     BallMaterial: {fileID: 6200000, guid: ef35c37a0020c634ab7e9c820f1e8f5a, type: 2}
   - Name: Snow
     isBought: 0
-    Cost: 120
+    Cost: 50
     SpriteImage: {fileID: 21300000, guid: 7c37ea616d2b79d4f96c3c0d71e213c5, type: 3}
     SmashMaskSprite: {fileID: 2920526213212046484, guid: 4e0b9ff4157eb7f4880b3403ce081e70, type: 3}
     Effect:
@@ -5565,10 +5565,11 @@ MonoBehaviour:
     BallMaterial: {fileID: 6200000, guid: d894af5efcd042e468f61f16682b6a89, type: 2}
   - Name: Pumkin
     isBought: 0
-    Cost: 120
+    Cost: 50
     SpriteImage: {fileID: 21300000, guid: bc8ea01fcf9b0f74d846b1913562a779, type: 3}
     SmashMaskSprite: {fileID: 0}
-    Effect: []
+    Effect:
+    - {fileID: 8855201602843685104, guid: b28798d1e9ede604696c36b7a3bba07e, type: 3}
     Sound: []
     mass: 2
     gravity: 0.1

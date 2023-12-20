@@ -60,7 +60,7 @@ public class PlayerLogic : MonoBehaviour
 
         if (_ef == null) 
             return;
-        
+
         Instantiate(_ef, transform.position, Quaternion.identity);
     }
 
