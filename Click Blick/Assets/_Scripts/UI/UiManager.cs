@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
-using YG;
+//using YG;
 
 public class UiManager : MonoBehaviour
 {
@@ -14,28 +14,28 @@ public class UiManager : MonoBehaviour
 
     void Start()
     {
-        if (YandexGame.SDKEnabled)
+        //if (YandexGame.SDKEnabled)
             Starter();
     }
 
-    private void OnEnable() => YandexGame.GetDataEvent += Starter;
-    private void OnDisable() => YandexGame.GetDataEvent -= Starter;
+    //private void OnEnable() => YandexGame.GetDataEvent += Starter;
+    //private void OnDisable() => YandexGame.GetDataEvent -= Starter;
 
     void Starter()
     {
         AllSkins.ChangedSkin += UpdateSkin;
-        YG.YandexGame.RewardVideoEvent += Try;
+        //YG.YandexGame.RewardVideoEvent += Try;
 
         AllSkins.currentSkin = PlayerPrefs.GetInt("currentSkin", 0);
         UpdateSkin();
 
         if (soundGM.Length == 2)
         {
-            MuteMusic(YG.YandexGame.savesData.isMusic);
-            MuteSound(YG.YandexGame.savesData.isSound);
+            MuteMusic(PlayerPrefs.GetInt(PlayerSetting.IsMusicMuteName, 0) == 1);
+            MuteSound(PlayerPrefs.GetInt(PlayerSetting.IsSoundMuteName, 0) == 1);
 
-            Act(musicGM, !YG.YandexGame.savesData.isMusic);
-            Act(soundGM, !YG.YandexGame.savesData.isSound);
+            Act(musicGM, PlayerPrefs.GetInt(PlayerSetting.IsMusicMuteName, 0) == 0);
+            Act(soundGM, PlayerPrefs.GetInt(PlayerSetting.IsSoundMuteName, 0) == 0);
         }
     }
 
@@ -48,7 +48,7 @@ public class UiManager : MonoBehaviour
     private void OnDestroy()
     {
         AllSkins.ChangedSkin -= UpdateSkin;
-        YG.YandexGame.RewardVideoEvent -= Try;
+        //YG.YandexGame.RewardVideoEvent -= Try;
     }
 
     [SerializeField] Image _playerImage;
@@ -100,7 +100,7 @@ public class UiManager : MonoBehaviour
     {
         //YG.YandexGame.SaveProgress();                   
 
-        LoadAndSaveProgress.SaveProgress();
+        //LoadAndSaveProgress.SaveProgress();
         SceneManager.LoadScene(name);
     }
     
@@ -109,7 +109,7 @@ public class UiManager : MonoBehaviour
         PlayerPrefs.SetInt("currentSkin", AllSkins.currentSkin); 
         Saves.ResetPoints();
 
-        YG.YandexGame.SaveProgress();
+        //YG.YandexGame.SaveProgress();
         SceneManager.LoadScene(name);
     }
 
@@ -143,7 +143,7 @@ public class UiManager : MonoBehaviour
         _buttonBuy.gameObject.SetActive(false);
         _buttonTry.gameObject.SetActive(false);
 
-        LoadAndSaveProgress.SaveProgress();
+        //LoadAndSaveProgress.SaveProgress();
     }
 
     public void Try(int u)

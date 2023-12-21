@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
+//using YG;
 
 public class UpdateValue : MonoBehaviour
 {
@@ -18,15 +18,15 @@ public class UpdateValue : MonoBehaviour
     private void OnDisable()
     {
         UiManager.Bought -= UpdateValueUI;
-        YandexGame.GetDataEvent -= UpdateValueUI;
+        //YandexGame.GetDataEvent -= UpdateValueUI;
     }
 
     private void OnEnable()
     {        
         UiManager.Bought += UpdateValueUI;
-        YandexGame.GetDataEvent += UpdateValueUI;
+        //YandexGame.GetDataEvent += UpdateValueUI;
 
-        if (YandexGame.SDKEnabled)
+        //if (YandexGame.SDKEnabled)
             UpdateValueUI();
     }
 

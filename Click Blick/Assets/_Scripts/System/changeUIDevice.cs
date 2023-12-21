@@ -1,34 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class changeUIDevice : MonoBehaviour
 {
     [SerializeField] GameObject mobile;
     [SerializeField] GameObject pc;
 
-    private void OnEnable() => YandexGame.GetDataEvent += Starter;
-    private void OnDisable() => YandexGame.GetDataEvent -= Starter;
+    //private void OnEnable() => YandexGame.GetDataEvent += Starter;
+    //private void OnDisable() => YandexGame.GetDataEvent -= Starter;
 
     private void Start()
     {
-        if (YandexGame.SDKEnabled)
+        //if (YandexGame.SDKEnabled)
             Starter();
     }
 
     private void Starter()
     {
-        Debug.Log(YandexGame.EnvironmentData.deviceType);
+        Debug.Log(SystemInfo.deviceType);
 
-        if (YandexGame.EnvironmentData.isDesktop)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             ChangeToPc(true);
         }
 
-       if (YandexGame.EnvironmentData.isMobile)
+       if (SystemInfo.deviceType == DeviceType.Handheld)
         {
             ChangeToPc(false);
+        }
+
+       if (SystemInfo.deviceType == DeviceType.Unknown)
+        {
+            ChangeToPc(true);
+            Debug.LogWarning("unknown device type");
         }
     }
 

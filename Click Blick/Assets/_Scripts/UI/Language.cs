@@ -7,11 +7,19 @@ public class Language : MonoBehaviour
     public GameObject rus;
     public GameObject eng;
 
+    public static string Lang = "Language";
+
     private void Awake()
     {
-        var y = YG.YandexGame.EnvironmentData.language == "ru";
+        var y = PlayerPrefs.GetString(Lang, LanguageType.ru.ToString()) == LanguageType.ru.ToString();
 
         rus.SetActive(!y);
         eng.SetActive(y);
     }
+}
+
+public enum LanguageType 
+{
+    ru,
+    eng
 }

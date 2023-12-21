@@ -7,13 +7,17 @@ public static class PlayerSetting
     public static bool IsMusicMute { private set; get;}
     public static bool IsSoundMute { private set; get;}
 
+    public static string IsSoundMuteName = "IsSoundMute";
+    public static string IsMusicMuteName = "IsMusicMute";
+
     /// <summary>
     /// Update sound settings 
     /// </summary>
     public static void UpdateSoundMute(bool isMute)
     {
         IsSoundMute = isMute;
-        YG.YandexGame.savesData.isSound = isMute;
+        PlayerPrefs.SetInt(IsSoundMuteName, isMute ? 1 : 0);
+        //YG.YandexGame.savesData.isSound = isMute;
         MusicBox.Instance.UpdateVolumeSettings(IsMusicMute, IsSoundMute);
     }
 
@@ -23,7 +27,8 @@ public static class PlayerSetting
     public static void UpdateMusicMute(bool isMute)
     {
         IsMusicMute = isMute;
-        YG.YandexGame.savesData.isMusic = isMute;
+        PlayerPrefs.SetInt(IsMusicMuteName, isMute ? 1 : 0);
+        //YG.YandexGame.savesData.isMusic = isMute;
         MusicBox.Instance.UpdateVolumeSettings(IsMusicMute, IsSoundMute);
     }    
 }

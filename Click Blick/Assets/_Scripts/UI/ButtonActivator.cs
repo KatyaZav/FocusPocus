@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonActivator : MonoBehaviour
 {
-    [SerializeField] GameObject retryButtonText;
+    /*[SerializeField] GameObject retryButtonText;
     [SerializeField] Button retryButton;
 
     void Start()
@@ -23,5 +23,5 @@ public class ButtonActivator : MonoBehaviour
             retryButtonText.SetActive(false);
             retryButton.enabled = true;
         }
-    }
+    }*/
 }

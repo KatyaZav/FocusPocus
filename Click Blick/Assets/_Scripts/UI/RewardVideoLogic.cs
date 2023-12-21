@@ -20,14 +20,14 @@ public class RewardVideoLogic : MonoBehaviour
             Instance = this;
 
         BallLogic.PlayerDead += OnGameEnd;
-        YG.YandexGame.RewardVideoEvent += Continue;
-        YG.YandexGame.ErrorVideoEvent += EndGame;
+        //YG.YandexGame.RewardVideoEvent += Continue;
+        //YG.YandexGame.ErrorVideoEvent += EndGame;
     }
     private void OnDisable()
     {
         BallLogic.PlayerDead -= OnGameEnd;
-        YG.YandexGame.RewardVideoEvent -= Continue;
-        YG.YandexGame.ErrorVideoEvent -= EndGame;
+        //YG.YandexGame.RewardVideoEvent -= Continue;
+        //YG.YandexGame.ErrorVideoEvent -= EndGame;
     }
 
     void Continue(int a)

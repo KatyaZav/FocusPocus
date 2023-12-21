@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class LoadAndSaveProgress : MonoBehaviour
 {
-    private void OnEnable() => YandexGame.GetDataEvent += loadProgress;
+    /*private void OnEnable() => YandexGame.GetDataEvent += loadProgress;
     private void OnDisable() => YandexGame.GetDataEvent -= loadProgress;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class LoadAndSaveProgress : MonoBehaviour
         /*if (!YandexGame.savesData.skins.ContainsKey("skin0"))
         {
             YandexGame.savesData.skins["skin0"] = 1;
-        }*/
+        }
 
         PlayerPrefs.SetInt(Saves.Diamond, YandexGame.savesData.Diamond);
         PlayerPrefs.SetInt(Saves.Records, YandexGame.savesData.Record);
@@ -60,5 +60,5 @@ public class LoadAndSaveProgress : MonoBehaviour
         }
 
         YandexGame.SaveProgress();
-    }
+    }*/
 }

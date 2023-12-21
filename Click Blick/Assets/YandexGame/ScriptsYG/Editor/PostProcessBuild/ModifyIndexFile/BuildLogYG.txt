@@ -1,2 +1,0 @@
-Build path: C:/Users/user/Desktop/_build
-Build number: 36

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class Saves : MonoBehaviour
 {
@@ -65,33 +65,11 @@ public class Saves : MonoBehaviour
         {
             Record = Points;
             PlayerPrefs.SetInt(Records, Record);
-            YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
+            //YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
         }
         else Points = 0;
 
-        YandexGame.NewLeaderboardScores("DiamondsLeaderBoard", Diamonds);
-
-        MetricaSend();
+        //YandexGame.NewLeaderboardScores("DiamondsLeaderBoard", Diamonds);
     }
 
-    static void MetricaSend()
-    {
-        var eventParams = new Dictionary<string, string>
-        {
-            { "Game points", Points.ToString()},
-            { "Game records", Records.ToString()},
-            { "Devise type", YandexGame.EnvironmentData.deviceType},
-        };
-
-        YandexMetrica.Send(AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Name, eventParams);
-
-        eventParams = new Dictionary<string, string>
-        {
-            { "Skin name", AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Name},
-            { "Diamonds", Saves.Diamonds.ToString()},
-            { "Game points", Points.ToString()},
-        };
-
-        YandexMetrica.Send("Best skin", eventParams);
-    }
 }
