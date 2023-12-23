@@ -43,13 +43,7 @@ public class RewardVideoLogic : MonoBehaviour
     /// </summary>
     void OnGameEnd()
     {
-        if (isFirstAd)
-        {
-            ChangeGamePauseSettingsToResume?.Invoke(false);
-            Invoke("OpenVideo", 0.7f);
-            isFirstAd = false;
-        }
-        else Invoke("EndGame", 0.7f);
+        Invoke("EndGame", 0.7f);
     }
 
     void OpenVideo()
