@@ -2562,9 +2562,9 @@ MonoBehaviour:
   right: {fileID: 810216549}
   objs:
   - obj: {fileID: 3484096051810844059, guid: 3138a43f975b365428d977ab062d34f6, type: 3}
-    maxTime: 5
-    minTime: 4
-    interval: 6
+    maxTime: 4
+    minTime: 2
+    interval: 5
   - obj: {fileID: 2940937998657597680, guid: 794765d296693774c9320329b3e3b773, type: 3}
     maxTime: 15
     minTime: 5
