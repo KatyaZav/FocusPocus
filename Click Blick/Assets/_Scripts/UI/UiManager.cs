@@ -56,7 +56,7 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] Button _buttonStart;
     [SerializeField] Button _buttonBuy;
-    [SerializeField] Button _buttonTry;
+    //[SerializeField] Button _buttonTry;
     
 
     /// <summary>
@@ -78,7 +78,7 @@ public class UiManager : MonoBehaviour
 
             _buttonStart.gameObject.SetActive(true);                
             _buttonBuy.gameObject.SetActive(false);
-            _buttonTry.gameObject.SetActive(false);
+            //_buttonTry.gameObject.SetActive(false);
         }
         else
         {
@@ -88,8 +88,9 @@ public class UiManager : MonoBehaviour
 
             bool u = (_skin.Cost <= PlayerPrefs.GetInt(Saves.Diamond));
 
-            _buttonBuy.gameObject.SetActive(u);
-            _buttonTry.gameObject.SetActive(!u);
+            _buttonBuy.gameObject.SetActive(true);
+            _buttonBuy.enabled = u;
+            //_buttonTry.gameObject.SetActive(!u);
         } 
     }
 
@@ -129,6 +130,7 @@ public class UiManager : MonoBehaviour
     }
 
     public static Action Bought;
+
     public void Buy()
     {
         if (!Saves.Buy(AllSkins.Instanse.AllSkinsInfo[AllSkins.currentSkin].Cost))
@@ -141,7 +143,7 @@ public class UiManager : MonoBehaviour
 
         _buttonStart.gameObject.SetActive(true);
         _buttonBuy.gameObject.SetActive(false);
-        _buttonTry.gameObject.SetActive(false);
+        //_buttonTry.gameObject.SetActive(false);
 
         //LoadAndSaveProgress.SaveProgress();
     }

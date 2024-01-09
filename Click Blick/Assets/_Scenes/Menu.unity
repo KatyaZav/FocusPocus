@@ -221,7 +221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &16057779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,7 +1033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &199850719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4870,7 +4870,6 @@ MonoBehaviour:
   _cost: {fileID: 1827657777}
   _buttonStart: {fileID: 16057779}
   _buttonBuy: {fileID: 1359386418}
-  _buttonTry: {fileID: 1943634337}
 --- !u!114 &1428448300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5040,7 +5039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1465751489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6769,7 +6768,6 @@ MonoBehaviour:
   _cost: {fileID: 1885382877}
   _buttonStart: {fileID: 199850720}
   _buttonBuy: {fileID: 879146173}
-  _buttonTry: {fileID: 1465751490}
 --- !u!114 &1802219552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7557,7 +7555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1943634337
 MonoBehaviour:
   m_ObjectHideFlags: 0
