@@ -98,6 +98,25 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -123,14 +142,14 @@ PolygonCollider2D:
       - {x: 0.13930182, y: -0.5294282}
       - {x: 0.17148043, y: -0.49344355}
       - {x: 0.19342616, y: -0.46491277}
-      - {x: 0.20438702, y: -0.43988508}
+      - {x: 0.17448089, y: -0.46518964}
       - {x: 0.18835087, y: -0.45389026}
-      - {x: 0.21935987, y: -0.42237443}
-      - {x: 0.20402332, y: -0.4412678}
-      - {x: 0.21779354, y: -0.42557132}
-      - {x: 0.21993637, y: -0.42258728}
-      - {x: 0.2266134, y: -0.4058277}
-      - {x: 0.24000001, y: -0.37800002}
+      - {x: 0.17335041, y: -0.45688194}
+      - {x: 0.16951618, y: -0.45967132}
+      - {x: 0.1832864, y: -0.43247235}
+      - {x: 0.15782364, y: -0.43639052}
+      - {x: 0.17830347, y: -0.38052315}
+      - {x: 0.196291, y: -0.37569928}
       - {x: 0.26000002, y: -0.326}
       - {x: 0.20400001, y: 0.85400003}
       - {x: 0.2, y: 0.95800006}
@@ -150,12 +169,12 @@ PolygonCollider2D:
       - {x: -0.252, y: -0.18200001}
       - {x: -0.256, y: -0.26200002}
       - {x: -0.256, y: -0.33400002}
-      - {x: -0.22800002, y: -0.40600002}
-      - {x: -0.22735989, y: -0.4174086}
-      - {x: -0.21735385, y: -0.45490754}
-      - {x: -0.21086444, y: -0.4774074}
-      - {x: -0.19687048, y: -0.49992245}
-      - {x: -0.17442921, y: -0.5099405}
+      - {x: -0.20499527, y: -0.38069546}
+      - {x: -0.16984805, y: -0.38290107}
+      - {x: -0.1713444, y: -0.44340503}
+      - {x: -0.16025403, y: -0.48200768}
+      - {x: -0.1600629, y: -0.49302143}
+      - {x: -0.114616916, y: -0.52374375}
       - {x: -0.1530577, y: -0.53561217}
       - {x: -0.11799252, y: -0.55111456}
       - {x: -0.120000005, y: -0.62200004}
@@ -171,6 +190,7 @@ PolygonCollider2D:
       - {x: 0.072000004, y: -1.6420001}
       - {x: 0.120000005, y: -1.6060001}
       - {x: 0.111278445, y: -1.5442203}
+  m_UseDelaunayMesh: 0
 --- !u!95 &2940937998657597583
 Animator:
   serializedVersion: 5
@@ -202,10 +222,29 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0030609071, y: -1.107354}
+  m_Offset: {x: 0.008078873, y: -1.0387961}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -216,7 +255,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31379497, y: 1.1385772}
+  m_Size: {x: 0.38404685, y: 1.3024557}
   m_EdgeRadius: 0
 --- !u!114 &4859539905849539722
 MonoBehaviour:

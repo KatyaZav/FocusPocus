@@ -27,7 +27,7 @@ public class BallLogic : MonoBehaviour
 
    void OnCollisionEnter2D(Collision2D collision)
     {       
-        if (checkEqualMask(_borderLayer.value, collision))
+        if (checkEqualMask(_borderLayer.value, collision) || checkEqualMask(_enemyLayer.value, collision))
         {
             _playerLogic.SetTrigger("borders");
             _playerLogic.SmashBall(collision.gameObject.transform);
