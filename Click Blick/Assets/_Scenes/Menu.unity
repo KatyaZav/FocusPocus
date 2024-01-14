@@ -4399,6 +4399,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf9732433f4dc044845763962493607, type: 3}
+--- !u!114 &1238647719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607, type: 3}
+  m_PrefabInstance: {fileID: 1238647718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404d6214ebdd58d43a94c7ed650dc2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1240103525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +4950,7 @@ MonoBehaviour:
   _cost: {fileID: 1827657777}
   _buttonStart: {fileID: 16057779}
   _buttonBuy: {fileID: 1359386418}
+  _buttonTry: {fileID: 1943634337}
 --- !u!114 &1428448300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5177,9 +5189,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1802219551}
-        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: Try
+      - m_Target: {fileID: 1238647719}
+        m_TargetAssemblyTypeName: YG.YandexGame, Assembly-CSharp
+        m_MethodName: _RewardedShow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6841,6 +6853,7 @@ MonoBehaviour:
   _cost: {fileID: 1885382877}
   _buttonStart: {fileID: 199850720}
   _buttonBuy: {fileID: 879146173}
+  _buttonTry: {fileID: 1465751490}
 --- !u!114 &1802219552
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using YG;
+using YG;
 
 public class Saves : MonoBehaviour
 {
@@ -61,15 +61,28 @@ public class Saves : MonoBehaviour
 
     public static void SavePr()
     {
+        Metrica();
+
         if (Record < Points)
         {
             Record = Points;
             PlayerPrefs.SetInt(Records, Record);
-            //YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
+            YandexGame.NewLeaderboardScores("MainLeaderBoard", Record);
         }
         else Points = 0;
 
-        //YandexGame.NewLeaderboardScores("DiamondsLeaderBoard", Diamonds);
+        YandexGame.NewLeaderboardScores("DiamondsLeaderBoard", Diamonds);
     }
 
+    private static void Metrica()
+    {
+        var eventParams = new Dictionary<string, string>
+        {
+            { "skin", AllSkins.currentSkin.ToString()},
+            { "count", Points.ToString()},
+            {"device type", YandexGame.EnvironmentData.deviceType}
+        };
+
+        YandexMetrica.Send("GameData", eventParams);
+    }
 }

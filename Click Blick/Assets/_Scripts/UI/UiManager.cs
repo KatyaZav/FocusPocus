@@ -24,7 +24,7 @@ public class UiManager : MonoBehaviour
     void Starter()
     {
         AllSkins.ChangedSkin += UpdateSkin;
-        //YG.YandexGame.RewardVideoEvent += Try;
+        YG.YandexGame.RewardVideoEvent += Try;
 
         AllSkins.currentSkin = PlayerPrefs.GetInt("currentSkin", 0);
         UpdateSkin();
@@ -48,7 +48,7 @@ public class UiManager : MonoBehaviour
     private void OnDestroy()
     {
         AllSkins.ChangedSkin -= UpdateSkin;
-        //YG.YandexGame.RewardVideoEvent -= Try;
+        YG.YandexGame.RewardVideoEvent -= Try;
     }
 
     [SerializeField] Image _playerImage;
@@ -56,7 +56,7 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] Button _buttonStart;
     [SerializeField] Button _buttonBuy;
-    //[SerializeField] Button _buttonTry;
+    [SerializeField] Button _buttonTry;
     
 
     /// <summary>
@@ -88,9 +88,9 @@ public class UiManager : MonoBehaviour
 
             bool u = (_skin.Cost <= PlayerPrefs.GetInt(Saves.Diamond));
 
-            _buttonBuy.gameObject.SetActive(true);
-            _buttonBuy.enabled = u;
-            //_buttonTry.gameObject.SetActive(!u);
+            _buttonBuy.gameObject.SetActive(u);
+            //_buttonBuy.enabled = u;
+            _buttonTry.gameObject.SetActive(!u);
         } 
     }
 
@@ -153,6 +153,8 @@ public class UiManager : MonoBehaviour
         if (u == 1)
             StartGame("Lvl");
     }
+
+
 
     public void DeleteProgress()
     {
